@@ -1,72 +1,32 @@
 <template>
-  <v-app id="sandbox">
-    <v-navigation-drawer
-      v-model="primaryDrawer.model"
-      temporary="temporary"
-      app
-      overflow
-    ></v-navigation-drawer>
-
-    <v-app-bar
-      app
-    >
-      <v-app-bar-nav-icon
-        @click.stop="primaryDrawer.model = !primaryDrawer.model"
-      ></v-app-bar-nav-icon>
-      <v-toolbar-title>Vuetify</v-toolbar-title>
-    </v-app-bar>
-
-    <v-main>
-      <v-container fluid>
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-col cols="10">
-            <v-card>
-              <v-card-text>
-                <v-row>
-                  <v-col
-                    cols="12"
-                    md="6"
-                  >
-                    <span>Scheme</span>
-                    <v-switch
-                      v-model="$vuetify.theme.dark"
-                      primary
-                      label="Dark"
-                    ></v-switch>
-                  </v-col>
-                </v-row>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
-
-    <v-footer
-      app
-    >
-      <span class="px-4">&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-  </v-app>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
 
-<script>
-  export default {
-    data: () => ({
-      drawers: ['Default (no property)', 'Permanent', 'Temporary'],
-      primaryDrawer: {
-        model: null,
-        type: 'default (no property)',
-        clipped: false,
-        floating: false,
-        mini: false,
-      },
-      footer: {
-        inset: false,
-      },
-    }),
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
   }
-</script>
+}
+</style>
