@@ -1,3 +1,4 @@
+<template>
 <v-row
     align="center"
     justify="center"
@@ -55,3 +56,4 @@
     </v-card>
 </v-col>
 </v-row>
+</template>
