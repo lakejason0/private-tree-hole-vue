@@ -9,7 +9,7 @@
         <v-text-field
           :label="$t('getThreadForm.threadUID')"
           name="thread-uid"
-          prepend-icon="mdi-qrcode"
+          prepend-icon="mdi-forum"
           type="text"
         ></v-text-field>
       </v-form>

@@ -8,5 +8,8 @@
     "title": "登錄",
     "account": "帳戶",
     "password": "密碼"
+  },
+  "appBar": {
+    "title": "雙向樹洞"
   }
 }
