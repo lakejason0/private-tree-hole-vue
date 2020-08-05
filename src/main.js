@@ -7,13 +7,19 @@ import axios from "axios";
 
 import router from "./router";
 
+import i18n from "./i18n";
+
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios.create({
   baseURL: "/api"
 });
 
-new Vue({
+// eslint-disable-line
+let vm = new Vue({
   vuetify,
   router,
+  i18n,
   render: h => h(App)
 }).$mount("#app");
+
+console.log(vm);

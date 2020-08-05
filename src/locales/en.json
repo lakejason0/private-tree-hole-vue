@@ -1,0 +1,12 @@
+{
+  "getThreadForm": {
+    "title": "Thread UID",
+    "goButton": "Go",
+    "threadUID": "Thread UID"
+  },
+  "loginForm": {
+    "title": "Login form",
+    "account": "Account",
+    "password": "Password"
+  }
+}

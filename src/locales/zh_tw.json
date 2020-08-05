@@ -1,0 +1,12 @@
+{
+  "getThreadForm": {
+    "title": "討論串號",
+    "goButton": "前往",
+    "threadUID": "討論串號"
+  },
+  "loginForm": {
+    "title": "登錄",
+    "account": "帳戶",
+    "password": "密碼"
+  }
+}
