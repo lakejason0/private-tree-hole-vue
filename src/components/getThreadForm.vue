@@ -1,5 +1,5 @@
 <template>
-  <v-card class="elevation-12">
+  <v-card class="elevation-1">
     <v-toolbar color="primary" dark flat>
       <v-toolbar-title>{{ $t('getThreadForm.title') }}</v-toolbar-title>
       <v-spacer></v-spacer>

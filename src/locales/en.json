@@ -11,5 +11,10 @@
   },
   "appBar": {
     "title": "Private Tree Hole"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "thread": "Thread"
   }
 }

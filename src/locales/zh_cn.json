@@ -11,5 +11,10 @@
   },
   "appBar": {
     "title": "双向树洞"
+  },
+  "navigation": {
+    "home": "主页",
+    "about": "关于",
+    "thread": "讨论串"
   }
 }
