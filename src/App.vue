@@ -2,18 +2,30 @@
   <div id="app">
     <v-app id="treehole">
       <v-navigation-drawer app temporary v-model="drawer">
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="title">
+              {{$t('navigation.title')}}
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              {{$t('navigation.subtitle')}}
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-divider></v-divider>
         <v-list nav>
-          <v-list-item v-for="i in routes" :key="i" :to="{path: i.path}">
+          <v-list-item v-for="route in navigationRoutes" :key="route.name" :to="{path: route.path}">
             <v-list-item-action>
-              <v-icon>mdi-{{ i.icon }}</v-icon>
+              <v-icon>mdi-{{ route.icon }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>{{ i.name }}</v-list-item-title>
+              <v-list-item-title>{{ route.name }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
-      <v-app-bar app clipped-left>
+      <v-app-bar app clipped-left color="primary" dark>
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-toolbar-title>{{ $t('appBar.title') }}</v-toolbar-title>
       </v-app-bar>
@@ -51,11 +63,12 @@
 </style>
 
 <script>
-import { routes } from "./router";
+import { routes, navigationRoutes } from "./router";
 export default {
   data(){
     return {
       routes,
+      navigationRoutes,
       drawer: false
     }
   }

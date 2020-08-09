@@ -7,6 +7,14 @@
             cols="12"
             sm="8"
             md="8"
+        >
+            <h1>{{ threadData.title }}</h1>
+            <h2>{{ threadData.thread }}</h2>
+        </v-col>
+        <v-col
+            cols="12"
+            sm="8"
+            md="8"
             v-for="floorData in threadData.posts"
             :key="floorData.floor"
         >
@@ -23,11 +31,11 @@ export default {
     components: {
         threadCard
     },
-    props: {
-        threadData: Object
-    },
-    methods: {
-        getThreadData = () => {}
+    data: () => ({
+        threadData: null
+    }),
+    async mounted() {
+        this.threadData = await this.getThreadData(this.$route.params.threadUID)
     }
 }
 </script>

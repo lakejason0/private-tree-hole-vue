@@ -11,7 +11,8 @@ const routes = [
     path: "/",
     name: i18n.t('navigation.home'),
     component: Home,
-    icon: "home"
+    icon: "home",
+    showAtNavigation: true
   },
   {
     path: "/about",
@@ -21,20 +22,34 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    icon: "information"
+    icon: "information",
+    showAtNavigation: true
   },
   {
     path: "/thread",
     name: i18n.t('navigation.thread'),
     component: () => import("../views/GetThread.vue"),
-    icon: "forum"
+    icon: "forum",
+    showAtNavigation: true
+  },
+  {
+    path: "/thread/:threadUID",
+    name: "threadPage",
+    component: () => import("../views/Thread.vue"),
+    icon: "forum",
+    showAtNavigation: false
   }
 ];
 
+const navigationRoutes = routes.filter( route => route.showAtNavigation )
+
 const router = new VueRouter({
+  mode: "history",
   routes
 });
 
 export default router;
 
 export {routes};
+
+export {navigationRoutes};
