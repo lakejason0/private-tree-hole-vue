@@ -9,21 +9,17 @@
       md="4"
     >
       <get-thread-form />
-      <v-spacer></v-spacer>
-      <thread-card />
     </v-col>
   </v-row>
 </template>
 
 <script>
 import getThreadForm from "@/components/getThreadForm.vue";
-import threadCard from "@/components/threadCard.vue";
 
 export default {
     name: "Thread",
     components: {
-        getThreadForm,
-        threadCard
+        getThreadForm
     }
 };
 </script>
