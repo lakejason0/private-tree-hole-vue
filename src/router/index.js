@@ -9,14 +9,14 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: i18n.t('navigation.home'),
+    name: 'navigation.home',
     component: Home,
     icon: "home",
     showAtNavigation: true
   },
   {
     path: "/about",
-    name: i18n.t('navigation.about'),
+    name: 'navigation.about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) fora this route
     // which is lazy-loaded when the route is visited.
@@ -27,7 +27,7 @@ const routes = [
   },
   {
     path: "/thread",
-    name: i18n.t('navigation.thread'),
+    name: 'navigation.thread',
     component: () => import("../views/GetThread.vue"),
     icon: "forum",
     showAtNavigation: true
