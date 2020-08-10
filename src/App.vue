@@ -25,11 +25,12 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
-      <v-app-bar app clipped-left color="primary" dark>
+      <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'dark' : 'primary'" dark>
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-toolbar-title>{{ $t('appBar.title') }}</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-menu>
+        <ThemeToggle />
+        <!--<v-menu>
           <template v-slot:activator="{ on , attrs }">
             <v-btn icon v-bind=attrs v-on="on" >
               <v-icon>mdi-dots-vertical</v-icon>
@@ -40,8 +41,8 @@
               <v-list-item-title>Test</v-list-item-title>
             </v-list-item>
           </v-list>
-        </v-menu>
-        
+        </v-menu>-->
+
       </v-app-bar>
       <v-main>
         <v-container fluid>
@@ -78,7 +79,14 @@
 
 <script>
 import { routes, navigationRoutes } from "./router";
+import ThemeToggle from "@/components/ThemeToggle";
 export default {
+  components: {
+    ThemeToggle
+  },
+  created() {
+    this.$vuetify.theme.dark = localStorage.getItem("th-theme") === 'true'
+  },
   data(){
     return {
       routes,
