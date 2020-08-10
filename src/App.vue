@@ -67,8 +67,8 @@
 
 <script>
 import { routes, navigationRoutes } from "./router";
-import ThemeToggle from "@/components/ThemeToggle";
-import LocalesMenu from "@/components/LocalesMenu";
+import ThemeToggle from "@/components/themeToggle";
+import LocalesMenu from "@/components/localesMenu";
 export default {
   components: {
     ThemeToggle, LocalesMenu
