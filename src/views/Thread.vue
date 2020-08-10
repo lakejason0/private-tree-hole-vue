@@ -8,8 +8,14 @@
             sm="8"
             md="8"
         >
-            <h1>{{ threadData.title }}</h1>
-            <h2>{{ threadData.thread }}</h2>
+            <h1 class="text-h2">{{ threadData.thread.title }}</h1>
+        </v-col>
+        <v-col
+            cols="12"
+            sm="8"
+            md="8"
+        >
+            <h2 class="text-h6">{{ threadData.thread.thread }}</h2>
         </v-col>
         <v-col
             cols="12"
@@ -32,10 +38,23 @@ export default {
         threadCard
     },
     data: () => ({
-        threadData: null
+        threadData: {title: "Loading...", thread: "Loading...", posts: []}
     }),
     async mounted() {
-        this.threadData = await this.getThreadData(this.$route.params.threadUID)
+        let response = await this.getThreadData(this.$route.params.threadUID)
+        this.threadData = response.data.data
+        console.log(this.threadData)
+    },
+    methods: {
+      getThreadData(threadUID) { 
+        return this.$http.post(`thread/${threadUID}`, {
+          action: "get",
+          data: {thread: threadUID}
+        })
+      },
+      makeToast: (toastData) => {
+        return toastData;
+      }
     }
 }
 </script>

@@ -11,20 +11,26 @@
           name="thread-uid"
           prepend-icon="mdi-forum"
           type="text"
+          v-model="threadUID"
         ></v-text-field>
       </v-form>
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn text color="primary">{{$t('getThreadForm.goButton')}}</v-btn>
+      <v-btn text color="primary" @click="goToThread(threadUID)">{{$t('getThreadForm.goButton')}}</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import router from "../router";
+
 export default {
-  props: {
-    source: String
+  data: () => ({
+    threadUID: ""
+  }),
+  methods: {
+    goToThread: (threadUID) => { router.push(`thread/${threadUID}`) }
   }
 };
 </script>

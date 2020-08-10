@@ -2,9 +2,9 @@
     <v-card
       class="mx-auto"
     >
-        <v-card-title>
+        <!--<v-card-title>
             <span class="title font-weight-light">{{ threadData.title }}</span>
-        </v-card-title>
+        </v-card-title>-->
         <v-card-text
           class="headline font-weight-regular"
         >
@@ -12,11 +12,7 @@
         </v-card-text>
         <v-card-actions>
             <v-list-item class="grow">
-                <v-list-item-avatar color="grey darken-3">
-                    <v-avatar color="indigo">
-                        <v-icon dark>mdi-account-circle</v-icon>
-                    </v-avatar>
-                </v-list-item-avatar>
+                <v-icon class="mr-1">mdi-account-circle</v-icon>
                 <v-list-item-content>
                     <v-list-item-title>{{ floorData.username }}</v-list-item-title>
                 </v-list-item-content>
@@ -26,9 +22,7 @@
                 >
                     <v-icon class="mr-1">mdi-clock</v-icon>
                     <span class="subheading mr-2">{{ floorData.time }}</span>
-                    <span class="mr-1">·</span>
-                    <v-icon class="mr-1">mdi-share-variant</v-icon>
-                    <span class="subheading">45</span>
+                    <!--<span class="mr-1">·</span>-->
                 </v-row>
             </v-list-item>
         </v-card-actions>

@@ -22,17 +22,6 @@ let vm = new Vue({
   render: h => h(App),
   data: {
     currentThreadUID: "",
-  },
-  methods: {
-      async getThreadData(threadUID) { 
-        return this.$http.post(`thread/${threadUID}`, {
-          action: "get",
-          data: {thread: threadUID}
-        })
-      },
-      makeToast: (toastData) => {
-        return toastData;
-      }
   }
 }).$mount("#app");
 
