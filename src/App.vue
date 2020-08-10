@@ -29,8 +29,8 @@
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-toolbar-title>{{ $t('appBar.title') }}</v-toolbar-title>
         <v-spacer></v-spacer>
-        <LocalesMenu/>
-        <ThemeToggle />
+        <locales-menu />
+        <theme-toggle />
       </v-app-bar>
       <v-main>
         <v-container fluid>
@@ -67,11 +67,11 @@
 
 <script>
 import { routes, navigationRoutes } from "./router";
-import ThemeToggle from "@/components/themeToggle";
-import LocalesMenu from "@/components/localesMenu";
+import themeToggle from "@/components/themeToggle";
+import localesMenu from "@/components/localesMenu";
 export default {
   components: {
-    ThemeToggle, LocalesMenu
+    themeToggle, localesMenu
   },
   created() {
     this.$vuetify.theme.dark = localStorage.getItem("th-theme") === 'true'
