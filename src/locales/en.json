@@ -1,9 +1,10 @@
 {
   "getThreadForm": {
-    "title": "Thread UID",
+    "title": "Thread ID",
     "goButton": "Go",
-    "threadUID": "Thread UID",
-    "validateMaxError": "A maximum of {max} characters is allowed"
+    "threadID": "Thread ID",
+    "validateMaxError": "A maximum of {max} characters is allowed",
+    "validateNullError": "A thread ID is required"
   },
   "loginForm": {
     "title": "Login form",
@@ -19,5 +20,9 @@
     "home": "Home",
     "about": "About",
     "thread": "Thread"
+  },
+  "thread": {
+    "notFoundError": "The requested thread is not found.",
+    "goBackButton": "Go back"
   }
 }

@@ -2,8 +2,9 @@
   "getThreadForm": {
     "title": "討論串號",
     "goButton": "前往",
-    "threadUID": "討論串號",
-    "validateMaxError": "最多允許 {max} 个字元"
+    "threadID": "討論串號",
+    "validateMaxError": "最多允許 {max} 个字元",
+    "validateNullError": "討論串號不可為空"
   },
   "loginForm": {
     "title": "登錄",
@@ -19,5 +20,9 @@
     "home": "主頁",
     "about": "關於",
     "thread": "討論串"
+  },
+  "thread": {
+    "notFoundError": "所訪問的討論串不存在。",
+    "goBackButton": "返回"
   }
 }

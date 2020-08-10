@@ -31,7 +31,7 @@ const routes = [
     showAtNavigation: true
   },
   {
-    path: "/thread/:threadUID",
+    path: "/thread/:threadID",
     name: "threadPage",
     component: () => import("../views/Thread.vue"),
     icon: "forum",

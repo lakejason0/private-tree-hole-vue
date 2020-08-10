@@ -42,12 +42,28 @@
       >
         <h2 class="text-h6">{{ threadData.thread.thread }}</h2>
       </v-col>
+      <v-col
+            cols="12"
+            sm="8"
+            md="8"
+            v-for="floorData in threadData.posts"
+            :key="floorData.floor"
+      >
+            <thread-card :floor-data="floorData"/>
+      </v-col>
     </v-row>
     <v-row v-else align="center"
            justify="center">
-      <v-alert type="error">
+      <v-alert prominent type="error">
         <!-- // @TODO i18n -->
-        不存在!
+        <v-row align="center">
+            <v-col class="grow">
+                {{$t('thread.notFoundError')}}
+            </v-col>
+            <v-col class="shrink">
+                <v-btn @click="backToGetThread">{{$t('thread.goBackButton')}}</v-btn>
+            </v-col>
+        </v-row>
       </v-alert>
     </v-row>
   </div>
@@ -55,6 +71,7 @@
 
 <script>
 import threadCard from "@/components/threadCard.vue";
+import router from "../router";
 
 export default {
   name: "Thread",
@@ -67,7 +84,7 @@ export default {
     success: false
   }),
   async mounted() {
-    let response = await this.getThreadData(this.$route.params.threadUID)
+    let response = await this.getThreadData(this.$route.params.threadID)
 
     this.loading = false
     if (response.data.code === 200) {
@@ -77,14 +94,17 @@ export default {
     console.log(this.threadData)
   },
   methods: {
-    getThreadData(threadUID) {
-      return this.$http.post(`thread/${threadUID}`, {
+    getThreadData(threadID) {
+      return this.$http.post(`thread/${threadID}`, {
         action: "get",
-        data: {thread: threadUID}
+        data: {thread: threadID}
       })
     },
     makeToast: (toastData) => {
       return toastData;
+    },
+    backToGetThread: () => {
+        router.push("thread/")
     }
   }
 }
