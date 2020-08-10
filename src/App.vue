@@ -29,20 +29,8 @@
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-toolbar-title>{{ $t('appBar.title') }}</v-toolbar-title>
         <v-spacer></v-spacer>
-        <theme-toggle />
-        <v-menu>
-          <template v-slot:activator="{ on , attrs }">
-            <v-btn icon v-bind=attrs v-on="on" >
-              <v-icon>mdi-dots-vertical</v-icon>
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item>
-              <v-list-item-title>Test</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>-->
-
+        <LocalesMenu/>
+        <ThemeToggle />
       </v-app-bar>
       <v-main>
         <v-container fluid>
@@ -79,10 +67,11 @@
 
 <script>
 import { routes, navigationRoutes } from "./router";
-import themeToggle from "@/components/themeToggle.vue";
+import ThemeToggle from "@/components/ThemeToggle";
+import LocalesMenu from "@/components/LocalesMenu";
 export default {
   components: {
-    themeToggle
+    ThemeToggle, LocalesMenu
   },
   created() {
     this.$vuetify.theme.dark = localStorage.getItem("th-theme") === 'true'
