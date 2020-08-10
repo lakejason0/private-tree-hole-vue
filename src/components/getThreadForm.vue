@@ -26,7 +26,6 @@
 
 <script>
 import router from "../router";
-import i18n from "../i18n";
 
 export default {
   data: () => ({
@@ -37,7 +36,7 @@ export default {
     rules () {
       const rules = []
       if (this.max) {
-        const rule = v => (v || '').length <= this.max || $t('getThreadForm.validateMaxError', {max: this.max})
+        const rule = v => (v || '').length <= this.max || this.$t('getThreadForm.validateMaxError', {max: this.max})
         rules.push(rule)
       }
       return rules;
