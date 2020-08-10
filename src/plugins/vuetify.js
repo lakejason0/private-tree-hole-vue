@@ -12,6 +12,9 @@ export default new Vuetify({
                 primary: colors.lightBlue.base,
                 secondary: colors.amber.accent4,
                 accent: colors.amber.accent4
+            },
+            dark: {
+                primary: colors.lightBlue.darken4
             }
         }
     }

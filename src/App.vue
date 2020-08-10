@@ -29,8 +29,8 @@
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
         <v-toolbar-title>{{ $t('appBar.title') }}</v-toolbar-title>
         <v-spacer></v-spacer>
-        <ThemeToggle />
-        <!--<v-menu>
+        <theme-toggle />
+        <v-menu>
           <template v-slot:activator="{ on , attrs }">
             <v-btn icon v-bind=attrs v-on="on" >
               <v-icon>mdi-dots-vertical</v-icon>
@@ -79,10 +79,10 @@
 
 <script>
 import { routes, navigationRoutes } from "./router";
-import ThemeToggle from "@/components/ThemeToggle";
+import themeToggle from "@/components/themeToggle.vue";
 export default {
   components: {
-    ThemeToggle
+    themeToggle
   },
   created() {
     this.$vuetify.theme.dark = localStorage.getItem("th-theme") === 'true'
