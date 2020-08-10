@@ -2,7 +2,8 @@
   "getThreadForm": {
     "title": "Thread UID",
     "goButton": "Go",
-    "threadUID": "Thread UID"
+    "threadUID": "Thread UID",
+    "validateMaxError": "A maximum of {max} characters is allowed"
   },
   "loginForm": {
     "title": "Login form",

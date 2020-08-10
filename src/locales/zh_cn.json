@@ -2,7 +2,8 @@
   "getThreadForm": {
     "title": "讨论串号",
     "goButton": "前往",
-    "threadUID": "讨论串号"
+    "threadUID": "讨论串号",
+    "validateMaxError": "最多允许{max}个字符"
   },
   "loginForm": {
     "title": "登录",

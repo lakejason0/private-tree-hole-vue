@@ -5,9 +5,11 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-card-text>
-      <v-form>
+      <v-form ref="form">
         <v-text-field
           :label="$t('getThreadForm.threadUID')"
+          :counter="max"
+          :rules="rules"
           name="thread-uid"
           prepend-icon="mdi-forum"
           type="text"
@@ -24,13 +26,32 @@
 
 <script>
 import router from "../router";
+import i18n from "../i18n";
 
 export default {
   data: () => ({
-    threadUID: ""
+    threadUID: "",
+    max: 30
   }),
+  computed: {
+    rules () {
+      const rules = []
+      if (this.max) {
+        const rule = v => (v || '').length <= this.max || $t('getThreadForm.validateMaxError', {max: this.max})
+        rules.push(rule)
+      }
+      return rules;
+    }
+  },
+  watch: {
+    max: 'validateField',
+    threadUID: 'validateField'
+  },
   methods: {
-    goToThread: (threadUID) => { router.push(`thread/${threadUID}`) }
+    goToThread: (threadUID) => { router.push(`thread/${threadUID}`) },
+    validateField () {
+      this.$refs.form.validate()
+    }
   }
 };
 </script>
