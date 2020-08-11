@@ -28,6 +28,7 @@
   "replyThreadForm": {
     "validateMaxError": "A maximum of {max} characters is allowed",
     "validateNullError": "A username is required",
-    "username": "Username"
+    "username": "Username",
+    "content": "Content"
   }
 }

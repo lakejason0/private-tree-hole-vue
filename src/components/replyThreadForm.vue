@@ -6,7 +6,7 @@
           @click="sheet = !sheet"
         />
       </template>
-      <v-sheet class="text-center" height="200px">
+      <v-sheet class="text-center">
         <v-btn
           class="mt-6"
           text
@@ -38,6 +38,8 @@
                     >
                         <v-textarea
                             v-model="content"
+                            prepend-icon="mdi-forum"
+                            :label="$t('replyThreadForm.content')"
                             autogrow
                             rows="4"
                         ></v-textarea>
