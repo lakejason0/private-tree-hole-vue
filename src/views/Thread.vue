@@ -72,6 +72,7 @@
       >
             <thread-card :floor-data="floorData"/>
       </v-col>
+      <reply-thread-form />
     </v-row>
     <v-row v-else align="center"
            justify="center">
@@ -87,7 +88,6 @@
         </v-row>
       </v-alert>
     </v-row>
-    <reply-bar />
     <fab />
   </div>
 </template>
@@ -97,7 +97,7 @@ import threadCard from "@/components/threadCard.vue";
 import threadCardSkeleton from "@/components/threadCardSkeleton.vue";
 import fab from "@/components/fab.vue";
 import router from "../router";
-import replyBar from "@/components/replyBar.vue";
+import replyThreadForm from "@/components/replyThreadForm.vue";
 
 export default {
   name: "Thread",
@@ -105,7 +105,7 @@ export default {
     threadCard,
     threadCardSkeleton,
     fab,
-    replyBar
+    replyThreadForm
   },
   data: () => ({
     threadData: {title: "Loading...", thread: "Loading...", posts: []},
