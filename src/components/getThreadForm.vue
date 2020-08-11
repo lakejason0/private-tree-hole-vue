@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     goToThread: (threadID) => {
-      router.push(`thread/${threadID}`)
+      router.push(`/thread/${threadID}`)
     }
   }
 };

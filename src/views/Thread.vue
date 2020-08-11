@@ -22,6 +22,27 @@
             class="mx-auto"
         ></v-skeleton-loader></h2>
       </v-col>
+      <v-col
+          cols="12"
+          md="8"
+          sm="8"
+      >
+        <thread-card-skeleton />
+      </v-col>
+      <v-col
+          cols="12"
+          md="8"
+          sm="8"
+      >
+        <thread-card-skeleton />
+      </v-col>
+      <v-col
+          cols="12"
+          md="8"
+          sm="8"
+      >
+        <thread-card-skeleton />
+      </v-col>
     </v-row>
     <v-row
         align="center"
@@ -66,17 +87,22 @@
         </v-row>
       </v-alert>
     </v-row>
+    <fab />
   </div>
 </template>
 
 <script>
 import threadCard from "@/components/threadCard.vue";
+import threadCardSkeleton from "@/components/threadCardSkeleton.vue";
+import fab from "@/components/fab.vue";
 import router from "../router";
 
 export default {
   name: "Thread",
   components: {
-    threadCard
+    threadCard,
+    threadCardSkeleton,
+    fab
   },
   data: () => ({
     threadData: {title: "Loading...", thread: "Loading...", posts: []},
@@ -104,7 +130,7 @@ export default {
       return toastData;
     },
     backToGetThread: () => {
-        router.push("thread/")
+        router.push("/thread/")
     }
   }
 }
