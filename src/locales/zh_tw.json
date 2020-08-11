@@ -24,5 +24,10 @@
   "thread": {
     "notFoundError": "所訪問的討論串不存在。",
     "goBackButton": "返回"
+  },
+  "replyThreadForm": {
+    "validateMaxError": "最多允許 {max} 个字元",
+    "validateNullError": "使用者名稱不可為空",
+    "username": "使用者名稱"
   }
 }

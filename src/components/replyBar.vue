@@ -4,6 +4,7 @@
       <v-toolbar
           dense
           floating
+          @click="$emit('click')"
       >
         <v-text-field
             hide-details

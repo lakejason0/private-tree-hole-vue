@@ -24,5 +24,10 @@
   "thread": {
     "notFoundError": "所访问的讨论串不存在。",
     "goBackButton": "返回"
+  },
+  "replyThreadForm": {
+    "validateMaxError": "最多允许{max}个字符",
+    "validateNullError": "用户名不可以为空",
+    "username": "用户名"
   }
 }

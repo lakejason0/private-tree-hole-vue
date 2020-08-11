@@ -24,5 +24,10 @@
   "thread": {
     "notFoundError": "The requested thread is not found.",
     "goBackButton": "Go back"
+  },
+  "replyThreadForm": {
+    "validateMaxError": "A maximum of {max} characters is allowed",
+    "validateNullError": "A username is required",
+    "username": "Username"
   }
 }
