@@ -6,7 +6,6 @@
           floating
           @click="$emit('click')"
           fixed
-          scroll-off-screen
           class="reply-bar"
           :class="{ 'reply-bar--hidden': !showReplyBar }"
       >
@@ -54,6 +53,10 @@ export default {
     methods: {
         onScroll () {
             const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+
             if (currentScrollPosition < 0) {
                 return
             }
@@ -62,7 +65,7 @@ export default {
                 return
             }
 
-            this.showReplyBar = currentScrollPosition < this.lastScrollPosition
+            this.showReplyBar = (currentScrollPosition < this.lastScrollPosition) || (scrollTop + windowHeight >= scrollHeight)
             this.lastScrollPosition = currentScrollPosition
         }
     }
