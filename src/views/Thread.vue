@@ -81,7 +81,7 @@
       <v-col cols="12" sm="12" md="12">
         <v-spacer></v-spacer>
       </v-col>
-      <reply-thread-form />
+      <reply-thread-form @reply="reply" :sending="sending" :sheet="sheet" />
     </v-row>
     <v-row v-else align="center"
            justify="center">
@@ -119,18 +119,12 @@ export default {
   data: () => ({
     threadData: {title: "Loading...", thread: "Loading...", posts: []},
     loading: true,
+    sending: false,
+    sheet: false,
     success: false
   }),
   mounted() {
     this.init();
-  },
-  watch: {
-    async reply(replyData) {
-      let response = await this.replyThread(...replyData)
-      if (response.data.code === 200){
-        this.init();
-      }
-    }
   },
   methods: {
     async init() {
@@ -142,6 +136,14 @@ export default {
       }
       console.log(this.threadData);
     },
+    async reply(replyData) {
+      this.sending = true
+      let response = await this.replyThread(...replyData)
+      if (response.data.code === 200){
+        this.init();
+      }
+      this.sheet = !this.sheet
+    },
     getThreadData(threadID) {
       return this.$http.post(`thread/${threadID}`, {
         action: "get",
@@ -149,10 +151,10 @@ export default {
       })
     },
     replyThread(username, content, threadID) {
-        return this.$http.post(`thread/${threadID}`, {
-            action: "reply",
-            data: {thread: threadID, username: username, content: content}
-        })
+      return this.$http.post(`thread/${threadID}`, {
+          action: "reply",
+          data: {thread: threadID, username: username, content: content}
+      })
     },
     makeToast: (toastData) => {
       return toastData;

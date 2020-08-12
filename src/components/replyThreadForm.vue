@@ -4,7 +4,7 @@
       <template v-slot:activator="{}">
         <reply-bar @click="sheet = !sheet" :content="content" />
       </template>
-          <v-form>
+          <v-form :disabled="sending">
             <v-card tile>
                 <v-card-title>
                     {{$t('replyThreadForm.title')}}
@@ -41,6 +41,8 @@
                         text
                         color="accent"
                         @click="reply"
+                        :loading="sending"
+                        :disabled="sending"
                     >
                         {{$t('replyThreadForm.replyButton')}}
                     </v-btn>
@@ -49,6 +51,7 @@
                         text
                         color="accent"
                         @click="sheet = !sheet"
+                        :disabled="sending"
                     >
                         {{$t('replyThreadForm.closeButton')}}
                     </v-btn>
@@ -66,11 +69,14 @@ export default {
   components: {
     replyBar
   },
+  props: {
+    sending: Boolean
+  },
   data: () => ({
-    sheet: false,
     max: 25,
     username: "",
-    content: ""
+    content: "",
+    sheet: false
   }),
   computed: {
     rules() {
@@ -89,7 +95,7 @@ export default {
   },
   methods: {
       reply() {
-        let replyData = {username: this.username, content: this.content}
+        let replyData = {username: this.username, content: this.content};
         this.$emit('reply', replyData);
       }
   }
