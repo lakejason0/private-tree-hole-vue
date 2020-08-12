@@ -72,6 +72,15 @@
       >
             <thread-card :floor-data="floorData"/>
       </v-col>
+      <v-col cols="12" sm="12" md="12">
+        <v-spacer></v-spacer>
+      </v-col>
+      <v-col cols="12" sm="12" md="12">
+        <v-spacer></v-spacer>
+      </v-col>
+      <v-col cols="12" sm="12" md="12">
+        <v-spacer></v-spacer>
+      </v-col>
       <reply-thread-form />
     </v-row>
     <v-row v-else align="center"
@@ -112,28 +121,44 @@ export default {
     loading: true,
     success: false
   }),
-  async mounted() {
-    let response = await this.getThreadData(this.$route.params.threadID)
-
-    this.loading = false
-    if (response.data.code === 200) {
-      this.threadData = response.data.data
-      this.success = true
+  mounted() {
+    this.init();
+  },
+  watch: {
+    async reply(replyData) {
+      let response = await this.replyThread(...replyData)
+      if (response.data.code === 200){
+        this.init();
+      }
     }
-    console.log(this.threadData)
   },
   methods: {
+    async init() {
+      let response = await this.getThreadData(this.$route.params.threadID)
+      this.loading = false
+      if (response.data.code === 200) {
+        this.threadData = response.data.data;
+        this.success = true;
+      }
+      console.log(this.threadData);
+    },
     getThreadData(threadID) {
       return this.$http.post(`thread/${threadID}`, {
         action: "get",
         data: {thread: threadID}
       })
     },
+    replyThread(username, content, threadID) {
+        return this.$http.post(`thread/${threadID}`, {
+            action: "reply",
+            data: {thread: threadID, username: username, content: content}
+        })
+    },
     makeToast: (toastData) => {
       return toastData;
     },
     backToGetThread: () => {
-        router.push("/thread/")
+        router.push("/thread/");
     }
   }
 }

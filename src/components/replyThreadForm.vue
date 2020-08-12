@@ -6,6 +6,9 @@
       </template>
           <v-form>
             <v-card tile>
+                <v-card-title>
+                    {{$t('replyThreadForm.title')}}
+                </v-card-title>
                 <v-card-text>
                         <v-row>
                         <v-col cols="12" sm="4" md="4">
@@ -33,6 +36,14 @@
                 </v-card-text>
                 <v-card-actions>
                 <v-spacer></v-spacer>
+                    <v-btn
+                        class="mt-6"
+                        text
+                        color="accent"
+                        @click="reply"
+                    >
+                        {{$t('replyThreadForm.replyButton')}}
+                    </v-btn>
                     <v-btn
                         class="mt-6"
                         text
@@ -76,6 +87,11 @@ export default {
       return rules;
     }
   },
-  methods: {}
+  methods: {
+      reply() {
+        let replyData = {username: this.username, content: this.content}
+        this.$emit('reply', replyData);
+      }
+  }
 };
 </script>

@@ -62,17 +62,17 @@ export default {
             if(!this.barHeight){
                 this.barHeight = this.$refs.bar.getBoundingClientRect().height
             }
-            let st = window.pageYOffset || document.documentElement.scrollTop;
-            if (st > this.lastScrollTop) {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > this.lastScrollTop) {
                 this.showReplyBar = false
-                let bottom = st > document.body.scrollHeight - this.barHeight - window.innerHeight
+                let bottom = scrollTop > document.body.scrollHeight - this.barHeight - window.innerHeight
                 if (bottom) {
                     this.showReplyBar = true
                 }
             } else {
                 this.showReplyBar = true
             }
-            this.lastScrollTop = st <= 0 ? 0 : st;
+            this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }
     }
 }

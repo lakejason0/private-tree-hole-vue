@@ -30,6 +30,8 @@
     "validateNullError": "A username is required",
     "username": "Username",
     "content": "Content",
-    "closeButton": "Close"
+    "closeButton": "Close",
+    "title": "Reply",
+    "replyButton": "Reply"
   }
 }
