@@ -29,6 +29,7 @@
     "validateMaxError": "A maximum of {max} characters is allowed",
     "validateNullError": "A username is required",
     "username": "Username",
-    "content": "Content"
+    "content": "Content",
+    "closeButton": "Close"
   }
 }

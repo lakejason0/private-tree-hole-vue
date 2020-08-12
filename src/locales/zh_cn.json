@@ -29,6 +29,7 @@
     "validateMaxError": "最多允许{max}个字符",
     "validateNullError": "用户名不可以为空",
     "username": "用户名",
-    "content": "内容"
+    "content": "内容",
+    "closeButton": "关闭"
   }
 }

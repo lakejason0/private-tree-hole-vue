@@ -29,6 +29,7 @@
     "validateMaxError": "最多允許 {max} 个字元",
     "validateNullError": "使用者名稱不可為空",
     "username": "使用者名稱",
-    "content": "內容"
+    "content": "內容",
+    "closeButton": "關閉"
   }
 }
