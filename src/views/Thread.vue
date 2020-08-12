@@ -135,10 +135,11 @@ export default {
         this.success = true;
       }
       console.log(this.threadData);
+        this.$on("reply", this.reply)
     },
     async reply(replyData) {
       this.sending = true
-      let response = await this.replyThread(...replyData)
+      let response = await this.replyThread({threadID: this.$route.params.threadID, ...replyData})
       if (response.data.code === 200){
         this.init();
       }
@@ -150,7 +151,7 @@ export default {
         data: {thread: threadID}
       })
     },
-    replyThread(username, content, threadID) {
+    replyThread({username, content, threadID}) {
       return this.$http.post(`thread/${threadID}`, {
           action: "reply",
           data: {thread: threadID, username: username, content: content}
