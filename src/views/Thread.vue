@@ -163,7 +163,6 @@ export default {
       return toastData;
     },
     toggleReply() {
-      console.log("Once")
       this.showReply = !this.showReply;
     },
     backToGetThread: () => {
