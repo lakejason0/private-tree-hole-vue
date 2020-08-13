@@ -81,7 +81,7 @@
       <v-col cols="12" sm="12" md="12">
         <v-spacer></v-spacer>
       </v-col>
-      <reply-thread-form @reply="reply" :sending="sending" @toggle-reply="toggleReply" :showReply="showReply" />
+      <reply-thread-form ref="replyForm" @reply="reply" :sending="sending" @toggle-reply="toggleReply" :showReply="showReply" />
     </v-row>
     <v-row v-else align="center"
            justify="center">
@@ -144,6 +144,7 @@ export default {
         this.init();
         this.toggleReply();
         this.sending = false;
+        this.$refs.replyForm.reset();
       }
     },
     getThreadData(threadID) {
@@ -161,9 +162,12 @@ export default {
     makeToast: (toastData) => {
       return toastData;
     },
-    toggleReply() {this.showReply = !this.showReply},
+    toggleReply() {
+      console.log("Once")
+      this.showReply = !this.showReply;
+    },
     backToGetThread: () => {
-        router.push("/thread/");
+      router.push("/thread/");
     }
   }
 }

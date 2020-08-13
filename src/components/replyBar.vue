@@ -1,6 +1,7 @@
 <template>
     <div
-        style="position: fixed; bottom: 16px; left: 0; right: 0;display: flex;align-items: center;justify-content: center">
+        style="position: fixed; bottom: 16px; left: 0; right: 0; display: flex; align-items: center; justify-content: center"
+    >
         <div ref="bar">
             <v-toolbar
                 :class="{ 'reply-bar--hidden': !showReplyBar }"
@@ -15,9 +16,9 @@
                     hide-details
                     readonly
                     single-line
-                    @click="$emit('click')"
+                    
                 ></v-text-field>
-                <v-btn icon @click="$emit('click')">
+                <v-btn icon>
                     <v-icon>send</v-icon>
                 </v-btn>
             </v-toolbar>

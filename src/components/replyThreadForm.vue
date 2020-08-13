@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-bottom-sheet v-model="showReply" inset>
+    <v-bottom-sheet persistent v-model="showReply" inset>
       <template v-slot:activator="{}">
         <reply-bar @click="$emit('toggle-reply')" :content="content" />
       </template>
@@ -99,7 +99,7 @@ export default {
         let replyData = {username: this.username, content: this.content};
         this.$emit('reply', replyData);
       },
-      clear() {
+      reset() {
         this.$refs.replyForm.reset();
       }
   }
