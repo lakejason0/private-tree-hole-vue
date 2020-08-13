@@ -97,14 +97,14 @@
         </v-row>
       </v-alert>
     </v-row>
-    <fab />
+    <create-thread-form />
   </div>
 </template>
 
 <script>
 import threadCard from "@/components/threadCard.vue";
 import threadCardSkeleton from "@/components/threadCardSkeleton.vue";
-import fab from "@/components/fab.vue";
+import createThreadForm from "@/components/createThreadForm.vue";
 import router from "../router";
 import replyThreadForm from "@/components/replyThreadForm.vue";
 
@@ -113,7 +113,7 @@ export default {
   components: {
     threadCard,
     threadCardSkeleton,
-    fab,
+    createThreadForm,
     replyThreadForm
   },
   data: () => ({

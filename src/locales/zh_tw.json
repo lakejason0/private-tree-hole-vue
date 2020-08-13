@@ -33,5 +33,15 @@
     "closeButton": "關閉",
     "title": "回覆",
     "replyButton": "回覆"
+  },
+  "createThreadForm": {
+    "validateMaxError": "最多允許 {max} 个字元",
+    "validateNullError": "使用者名稱不可為空",
+    "username": "使用者名稱",
+    "content": "內容",
+    "closeButton": "關閉",
+    "threadTitle": "標題",
+    "title": "創建討論串",
+    "createButton": "創建"
   }
 }

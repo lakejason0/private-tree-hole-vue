@@ -33,5 +33,15 @@
     "closeButton": "Close",
     "title": "Reply",
     "replyButton": "Reply"
+  },
+  "createThreadForm": {
+    "validateMaxError": "A maximum of {max} characters is allowed",
+    "validateNullError": "A username is required",
+    "username": "Username",
+    "content": "Content",
+    "closeButton": "Close",
+    "title": "Create thread",
+    "threadTitle": "Title",
+    "replyButton": "Create"
   }
 }

@@ -1,8 +1,21 @@
 <template>
   <div class="text-center">
     <v-bottom-sheet persistent v-model="showCreate" inset scrollable>
-      <template v-slot:activator="{}">
-        <fab @click="$emit('toggle-create')" />
+      <template v-slot:activator="{}" >
+        <v-speed-dial
+            bottom right
+            fixed
+        >
+            <template v-slot:activator>
+                <v-btn
+                    fab
+                    :color="$vuetify.theme.dark ? 'dark' : 'accent'"
+                    @click="showCreate = !showCreate"
+                >
+                    <v-icon>edit</v-icon>
+                </v-btn>
+            </template>
+        </v-speed-dial>
       </template>
           <v-form ref="createForm" :disabled="sending">
             <v-card tile>
@@ -24,7 +37,7 @@
                         </v-col>
                         <v-col cols="12" sm="4" md="4">
                             <v-text-field
-                            :label="$t('createThreadForm.title')"
+                            :label="$t('createThreadForm.threadTitle')"
                             name="title"
                             prepend-icon="mdi-sign-text"
                             type="text"
@@ -59,7 +72,7 @@
                         class="mt-6"
                         text
                         color="accent"
-                        @click="$emit('toggle-create')"
+                        @click="showCreate = !showCreate"
                         :disabled="sending"
                     >
                         {{$t('createThreadForm.closeButton')}}
@@ -72,18 +85,15 @@
 </template>
 
 <script>
-import fab from "@/components/fab.vue";
+import router from "../router";
 
 export default {
-  components: {
-    createBar
-  },
-  props: {
-    sending: Boolean,
-    showCreate: Boolean
-  },
+  components: {},
+  props: {},
   data: () => ({
     max: 25,
+    sending: false,
+    showCreate: false,
     username: "",
     content: "",
     title: ""
@@ -104,9 +114,23 @@ export default {
     }
   },
   methods: {
-      create() {
+      async create() {
         let createData = {username: this.username, content: this.content, title: this.title};
-        this.$emit('create', createData);
+        this.sending = true;
+        let response = await this.createThread(createData)
+        if (response.data.code === 200){
+          this.sending = false;
+          this.reset();
+          this.showCreate = !this.showCreate
+          let newThreadID = response.data.data.thread;
+          router.push(`/thread/${newThreadID}`);
+        }
+      },
+      createThread({username, content, title}) {
+        return this.$http.post("thread", {
+            action: "create",
+            data: {title: title, username: username, content: content}
+        })
       },
       reset() {
         this.$refs.createForm.reset();
