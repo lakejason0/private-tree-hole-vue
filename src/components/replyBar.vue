@@ -51,7 +51,7 @@ export default {
         _onScroll: null
     }),
     beforeMount() {
-        this._onScroll = throttle(this.onScroll, 20)
+        this._onScroll = throttle(this.onScroll, 60)
     },
     mounted() {
         window.addEventListener('scroll', this._onScroll)

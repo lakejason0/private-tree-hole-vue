@@ -5,9 +5,7 @@
         <!--<v-card-title>
             <span class="title font-weight-light">{{ threadData.title }}</span>
         </v-card-title>-->
-        <v-card-text>
-            <div class="markdown" v-html="compiledContent"></div>
-        </v-card-text>
+        <div class="markdown" v-html="compiledContent"></div>
         <v-card-actions>
             <v-list-item class="grow">
                 <v-icon class="mr-1">mdi-account-circle</v-icon>
@@ -27,11 +25,13 @@
     </v-card>
 </template>
 
-<style scoped>
+<style>
 .markdown code {
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    background: red;
+}
+.markdown {
+    padding: 16px;
 }
 </style>
 
