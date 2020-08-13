@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-bottom-sheet persistent v-model="showReply" inset>
+    <v-bottom-sheet persistent v-model="showReply" inset scrollable>
       <template v-slot:activator="{}">
         <reply-bar @click="$emit('toggle-reply')" :content="content" />
       </template>

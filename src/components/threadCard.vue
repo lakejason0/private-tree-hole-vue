@@ -5,10 +5,8 @@
         <!--<v-card-title>
             <span class="title font-weight-light">{{ threadData.title }}</span>
         </v-card-title>-->
-        <v-card-text
-          class="headline font-weight-regular"
-        >
-            {{ floorData.content }}
+        <v-card-text>
+            <div class="markdown" v-html="compiledContent"></div>
         </v-card-text>
         <v-card-actions>
             <v-list-item class="grow">
@@ -29,7 +27,17 @@
     </v-card>
 </template>
 
+<style scoped>
+.markdown code {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background: red;
+}
+</style>
+
 <script>
+import marked from "marked";
+import DOMPurify from "dompurify";
 export default {
     props: {
         floorData: {type: Object, default: () => {
@@ -47,6 +55,15 @@ export default {
                     title: "Title"
                 }
             }
+        }
+    },
+    computed: {
+        compiledContent () {
+            let markdownContent = marked(this.floorData.content)
+            let sanitizedContent = DOMPurify.sanitize(markdownContent, {KEEP_CONTENT: true})
+            console.log(markdownContent)
+            console.log(sanitizedContent)
+            return sanitizedContent
         }
     }
 }

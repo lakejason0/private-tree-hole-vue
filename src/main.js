@@ -19,10 +19,7 @@ let vm = new Vue({
   vuetify,
   router,
   i18n,
-  render: h => h(App),
-  data: {
-    currentthreadID: "",
-  }
+  render: h => h(App)
 }).$mount("#app");
 
 console.log(vm);
