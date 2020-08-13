@@ -1,10 +1,10 @@
 <template>
   <div class="text-center">
-    <v-bottom-sheet v-model="sheet" inset>
+    <v-bottom-sheet v-model="showReply" inset>
       <template v-slot:activator="{}">
-        <reply-bar @click="sheet = !sheet" :content="content" />
+        <reply-bar @click="$emit('toggle-reply')" :content="content" />
       </template>
-          <v-form :disabled="sending">
+          <v-form ref="replyForm" :disabled="sending">
             <v-card tile>
                 <v-card-title>
                     {{$t('replyThreadForm.title')}}
@@ -50,7 +50,7 @@
                         class="mt-6"
                         text
                         color="accent"
-                        @click="sheet = !sheet"
+                        @click="$emit('toggle-reply')"
                         :disabled="sending"
                     >
                         {{$t('replyThreadForm.closeButton')}}
@@ -70,13 +70,14 @@ export default {
     replyBar
   },
   props: {
-    sending: Boolean
+    sending: Boolean,
+    showReply: Boolean
   },
   data: () => ({
     max: 25,
     username: "",
     content: "",
-    sheet: false
+    
   }),
   computed: {
     rules() {
@@ -97,6 +98,9 @@ export default {
       reply() {
         let replyData = {username: this.username, content: this.content};
         this.$emit('reply', replyData);
+      },
+      clear() {
+        this.$refs.replyForm.reset();
       }
   }
 };

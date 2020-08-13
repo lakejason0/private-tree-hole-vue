@@ -15,8 +15,9 @@
                     hide-details
                     readonly
                     single-line
+                    @click="$emit('click')"
                 ></v-text-field>
-                <v-btn icon>
+                <v-btn icon @click="$emit('click')">
                     <v-icon>send</v-icon>
                 </v-btn>
             </v-toolbar>
