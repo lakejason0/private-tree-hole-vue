@@ -135,7 +135,7 @@ export default {
         this.success = true;
       }
       console.log(this.threadData);
-        this.$on("reply", this.reply)
+      this.$on("reply", this.reply)
     },
     async reply(replyData) {
       this.sending = true
