@@ -141,7 +141,9 @@ export default {
       makeToast(toastData) {
         toastData.map((toast) => {
           if (toast.code >= 400 && toast.code < 500) {
-            this.$dialog.message.error(this.$t(toast.identifier), {position: "bottom-left"})
+            this.$dialog.message.error(this.$t(toast.identifier), {position: "bottom-left", icon: true})
+          } else {
+            this.$dialog.message.info(this.$t(toast.identifier), {position: "bottom-left", icon: true})
           }
         })
       }

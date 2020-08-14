@@ -61,8 +61,6 @@ export default {
         compiledContent () {
             let markdownContent = marked(this.floorData.content)
             let sanitizedContent = DOMPurify.sanitize(markdownContent, {KEEP_CONTENT: true})
-            console.log(markdownContent)
-            console.log(sanitizedContent)
             return sanitizedContent
         }
     }
