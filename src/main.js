@@ -2,6 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 
+import VuetifyDialog from "vuetify-dialog";
+import "vuetify-dialog/dist/vuetify-dialog.css";
+
 // import "./registerServiceWorker";
 import axios from "axios";
 
@@ -13,6 +16,12 @@ Vue.config.productionTip = false;
 Vue.prototype.$http = axios.create({
   baseURL: "/api"
 });
+
+Vue.use(VuetifyDialog, {
+  context: {
+    vuetify
+  }
+})
 
 // eslint-disable-line
 let vm = new Vue({

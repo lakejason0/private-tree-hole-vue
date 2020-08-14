@@ -126,16 +126,24 @@ export default {
   mounted() {
     this.init();
   },
+  beforeRouteUpdate(to,from,next) {
+    if (to.fullPath!=from.fullPath) {
+      next();
+      this.init();
+    }
+  },
   methods: {
     async init() {
-      let response = await this.getThreadData(this.$route.params.threadID)
-      this.loading = false
+      let response = await this.getThreadData(this.$route.params.threadID);
+      this.loading = false;
       if (response.data.code === 200) {
         this.threadData = response.data.data;
         this.success = true;
+      } else {
+        this.makeToast(response.data.toast);
       }
       console.log(this.threadData);
-      this.$on("reply", this.reply)
+      this.$on("reply", this.reply);
     },
     async reply(replyData) {
       this.sending = true
@@ -145,22 +153,29 @@ export default {
         this.toggleReply();
         this.sending = false;
         this.$refs.replyForm.reset();
+      } else {
+        this.sending = false;
+        this.makeToast(response.data.toast);
       }
     },
     getThreadData(threadID) {
       return this.$http.post(`thread/${threadID}`, {
         action: "get",
         data: {thread: threadID}
-      })
+      });
     },
     replyThread({username, content, threadID}) {
       return this.$http.post(`thread/${threadID}`, {
           action: "reply",
           data: {thread: threadID, username: username, content: content}
-      })
+      });
     },
-    makeToast: (toastData) => {
-      return toastData;
+    makeToast(toastData) {
+      toastData.map((toast) => {
+        if (toast.code >= 400 && toast.code < 500) {
+          this.$dialog.message.error(this.$t(toast.identifier), {position: "bottom-left"})
+        }
+      })
     },
     toggleReply() {
       this.showReply = !this.showReply;

@@ -43,5 +43,13 @@
     "title": "创建讨论串",
     "threadTitle": "标题",
     "createButton": "创建"
+  },
+  "message": {
+    "ise": "哎呀，土豆出现错误了",
+    "floorNumberError": "查询楼层号时出现错误",
+    "missingThread": "所回复的讨论串不存在",
+    "closedThread": "所回复的讨论串已被关闭",
+    "forbidden": "没有权限",
+    "emptyPost": "所提交的讨论串不能是空的"
   }
 }

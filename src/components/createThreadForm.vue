@@ -124,6 +124,9 @@ export default {
           this.showCreate = !this.showCreate
           let newThreadID = response.data.data.thread;
           router.push(`/thread/${newThreadID}`);
+        } else {
+          this.sending = false;
+          this.makeToast(response.data.toast);
         }
       },
       createThread({username, content, title}) {
@@ -134,6 +137,13 @@ export default {
       },
       reset() {
         this.$refs.createForm.reset();
+      },
+      makeToast(toastData) {
+        toastData.map((toast) => {
+          if (toast.code >= 400 && toast.code < 500) {
+            this.$dialog.message.error(this.$t(toast.identifier), {position: "bottom-left"})
+          }
+        })
       }
   }
 };

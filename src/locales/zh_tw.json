@@ -43,5 +43,13 @@
     "threadTitle": "標題",
     "title": "創建討論串",
     "createButton": "創建"
+  },
+  "message": {
+    "ise": "伺服器內部錯誤",
+    "floorNumberError": "查詢樓層號時出現錯誤",
+    "missingThread": "所回覆的討論串不存在",
+    "closedThread": "所回覆的討論串已被關閉",
+    "forbidden": "沒有權限",
+    "emptyPost": "所提交的討論串內容不能為空"
   }
 }

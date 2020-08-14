@@ -43,5 +43,12 @@
     "title": "Create thread",
     "threadTitle": "Title",
     "replyButton": "Create"
+  },
+  "message": {
+    "ise": "Internal Server Error",
+    "floorNumberError": "Can't find the correct floor number.",
+    "missingThread": "The thread you're replying to is missing.",
+    "forbidden": "Permisson denied",
+    "closedThread": "The thread you're replying to is closed."
   }
 }
