@@ -5,17 +5,21 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="title">
-              {{$t('navigation.title')}}
+              {{ $t("navigation.title") }}
             </v-list-item-title>
             <v-list-item-subtitle>
-              {{$t('navigation.subtitle')}}
+              {{ $t("navigation.subtitle") }}
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
 
         <v-divider></v-divider>
         <v-list nav>
-          <v-list-item v-for="route in navigationRoutes" :key="route.name" :to="{path: route.path}">
+          <v-list-item
+            v-for="route in navigationRoutes"
+            :key="route.name"
+            :to="{ path: route.path }"
+          >
             <v-list-item-action>
               <v-icon>mdi-{{ route.icon }}</v-icon>
             </v-list-item-action>
@@ -25,9 +29,14 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
-      <v-app-bar app clipped-left :color="$vuetify.theme.dark ? 'dark' : 'primary'" dark>
+      <v-app-bar
+        app
+        clipped-left
+        :color="$vuetify.theme.dark ? 'dark' : 'primary'"
+        dark
+      >
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-        <v-toolbar-title>{{ $t('appBar.title') }}</v-toolbar-title>
+        <v-toolbar-title>{{ $t("appBar.title") }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <locales-menu />
         <theme-toggle />
@@ -71,17 +80,18 @@ import themeToggle from "@/components/themeToggle";
 import localesMenu from "@/components/localesMenu";
 export default {
   components: {
-    themeToggle, localesMenu
+    themeToggle,
+    localesMenu
   },
   created() {
-    this.$vuetify.theme.dark = localStorage.getItem("th-theme") === 'true'
+    this.$vuetify.theme.dark = localStorage.getItem("th-theme") === "true";
   },
-  data(){
+  data() {
     return {
       routes,
       navigationRoutes,
       drawer: false
-    }
+    };
   }
 };
 </script>

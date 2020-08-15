@@ -19,7 +19,8 @@
     "subtitle": "一个私人树洞。",
     "home": "主页",
     "about": "关于",
-    "thread": "讨论串"
+    "thread": "讨论串",
+    "public": "公共版"
   },
   "thread": {
     "notFoundError": "所访问的讨论串不存在。",

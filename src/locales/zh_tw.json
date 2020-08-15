@@ -19,7 +19,8 @@
     "subtitle": "一個私人樹洞。",
     "home": "主頁",
     "about": "關於",
-    "thread": "討論串"
+    "thread": "討論串",
+    "public": "公共版"
   },
   "thread": {
     "notFoundError": "所訪問的討論串不存在。",

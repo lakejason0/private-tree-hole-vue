@@ -6,16 +6,16 @@ import colors from "vuetify/lib/util/colors";
 Vue.use(Vuetify);
 
 export default new Vuetify({
-    theme: {
-        themes: {
-            light: {
-                primary: colors.lightBlue.base,
-                secondary: colors.amber.accent4,
-                accent: colors.amber.accent4
-            },
-            dark: {
-                primary: colors.lightBlue.darken4
-            }
-        }
+  theme: {
+    themes: {
+      light: {
+        primary: colors.lightBlue.base,
+        secondary: colors.amber.accent4,
+        accent: colors.amber.accent4
+      },
+      dark: {
+        primary: colors.lightBlue.darken4
+      }
     }
+  }
 });

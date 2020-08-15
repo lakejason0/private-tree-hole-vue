@@ -137,10 +137,10 @@ export default {
       }
     ]
   }),
-    mounted() {
-      this.$http('ping').then(res => {
-          console.log(res.data)
-      })
-    }
+  mounted() {
+    this.$http("ping").then(res => {
+      console.log(res.data);
+    });
+  }
 };
 </script>

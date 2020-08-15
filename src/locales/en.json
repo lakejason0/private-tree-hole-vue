@@ -19,7 +19,8 @@
     "subtitle": "A private tree hole.",
     "home": "Home",
     "about": "About",
-    "thread": "Thread"
+    "thread": "Thread",
+    "public": "Public"
   },
   "thread": {
     "notFoundError": "The requested thread is not found.",

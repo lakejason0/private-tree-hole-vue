@@ -7,14 +7,14 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: 'navigation.home',
+    name: "navigation.home",
     component: Home,
     icon: "home",
     showAtNavigation: true
   },
   {
     path: "/about",
-    name: 'navigation.about',
+    name: "navigation.about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) fora this route
     // which is lazy-loaded when the route is visited.
@@ -25,7 +25,7 @@ const routes = [
   },
   {
     path: "/thread",
-    name: 'navigation.thread',
+    name: "navigation.thread",
     component: () => import("../views/GetThread.vue"),
     icon: "forum",
     showAtNavigation: true
@@ -36,10 +36,17 @@ const routes = [
     component: () => import("../views/Thread.vue"),
     icon: "forum",
     showAtNavigation: false
+  },
+  {
+    path: "/public",
+    name: "navigation.public",
+    component: () => import("../views/Public.vue"),
+    icon: "post",
+    showAtNavigation: true
   }
 ];
 
-const navigationRoutes = routes.filter( route => route.showAtNavigation )
+const navigationRoutes = routes.filter(route => route.showAtNavigation);
 
 const router = new VueRouter({
   mode: "history",
@@ -48,6 +55,6 @@ const router = new VueRouter({
 
 export default router;
 
-export {routes};
+export { routes };
 
-export {navigationRoutes};
+export { navigationRoutes };

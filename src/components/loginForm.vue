@@ -1,18 +1,18 @@
 <template>
   <v-card class="elevation-12">
     <v-toolbar color="primary" dark flat>
-      <v-toolbar-title>{{$t('loginForm.title')}}</v-toolbar-title>
+      <v-toolbar-title>{{ $t("loginForm.title") }}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-tooltip bottom>
-      </v-tooltip>
+      <v-tooltip bottom> </v-tooltip>
     </v-toolbar>
     <v-card-text>
       <v-form>
-        <v-text-field 
+        <v-text-field
           :label="$t('loginForm.account')"
           name="account"
           prepend-icon="mdi-account"
-          type="text">
+          type="text"
+        >
         </v-text-field>
         <v-text-field
           id="password"

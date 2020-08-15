@@ -21,7 +21,7 @@ Vue.use(VuetifyDialog, {
   context: {
     vuetify
   }
-})
+});
 
 // eslint-disable-line
 let vm = new Vue({
