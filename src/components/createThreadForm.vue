@@ -41,6 +41,12 @@
                   v-model="title"
                 ></v-text-field>
               </v-col>
+              <v-col cols="12" sm="4" md="4">
+                <v-checkbox
+                  v-model="is_public"
+                  :label="$t('createThreadForm.isPublic')"
+                ></v-checkbox>
+              </v-col>
               <v-col cols="12" sm="12" md="12">
                 <v-textarea
                   v-model="content"
@@ -92,6 +98,7 @@ export default {
     showCreate: false,
     username: "",
     content: "",
+    is_public: false,
     title: ""
   }),
   computed: {
@@ -116,7 +123,8 @@ export default {
       let createData = {
         username: this.username,
         content: this.content,
-        title: this.title
+        title: this.title,
+        is_public: this.is_public
       };
       this.sending = true;
       let response = await this.createThread(createData);

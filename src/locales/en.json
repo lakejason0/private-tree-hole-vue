@@ -22,6 +22,10 @@
     "thread": "Thread",
     "public": "Public"
   },
+  "public": {
+    "title": "Public",
+    "error": "An error occurred."
+  },
   "thread": {
     "notFoundError": "The requested thread is not found.",
     "goBackButton": "Go back"
@@ -43,6 +47,7 @@
     "closeButton": "Close",
     "title": "Create thread",
     "threadTitle": "Title",
+    "isPublic": "Is Public",
     "replyButton": "Create"
   },
   "message": {
@@ -50,6 +55,8 @@
     "floorNumberError": "Can't find the correct floor number.",
     "missingThread": "The thread you're replying to is missing.",
     "forbidden": "Permisson denied",
-    "closedThread": "The thread you're replying to is closed."
+    "closedThread": "The thread you're replying to is closed.",
+    "emptyPost": "You can't post an empty post.",
+    "emptyPublic": "No public post exists."
   }
 }

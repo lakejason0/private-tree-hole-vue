@@ -22,6 +22,10 @@
     "thread": "讨论串",
     "public": "公共版"
   },
+  "public": {
+    "title": "公共版",
+    "error": "请求时发生错误。"
+  },
   "thread": {
     "notFoundError": "所访问的讨论串不存在。",
     "goBackButton": "返回"
@@ -43,6 +47,7 @@
     "closeButton": "关闭",
     "title": "创建讨论串",
     "threadTitle": "标题",
+    "isPublic": "投放至公共版",
     "createButton": "创建"
   },
   "message": {
@@ -51,6 +56,7 @@
     "missingThread": "所回复的讨论串不存在",
     "closedThread": "所回复的讨论串已被关闭",
     "forbidden": "没有权限",
-    "emptyPost": "所提交的讨论串不能是空的"
+    "emptyPost": "所提交的讨论串不能是空的",
+    "emptyPublic": "公共版暂无讨论串"
   }
 }
