@@ -7,7 +7,7 @@
     "validateNullError": "A thread ID is required"
   },
   "loginForm": {
-    "title": "Login form",
+    "title": "Login",
     "account": "Account",
     "password": "Password",
     "loginButton": "Login",
@@ -15,6 +15,18 @@
     "validateUsernameNullError": "A username is required",
     "validatePasswordMaxError": "A maximum of {max} characters is allowed",
     "validatePasswordNullError": "A password is required"
+  },
+  "registerForm": {
+    "title": "Register",
+    "account": "Account",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Register",
+    "validateUsernameMaxError": "A maximum of {max} characters is allowed",
+    "validateUsernameNullError": "A username is required",
+    "validatePasswordMaxError": "A maximum of {max} characters is allowed",
+    "validatePasswordNullError": "A password is required",
+    "validateEmailError": "A valid Email address is required"
   },
   "appBar": {
     "title": "Private Tree Hole"

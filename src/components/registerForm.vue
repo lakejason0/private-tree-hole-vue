@@ -1,10 +1,10 @@
 <template>
   <v-card class="elevation-1">
     <v-toolbar :color="$vuetify.theme.dark ? 'dark' : 'primary'" dark flat>
-      <v-toolbar-title>{{ $t("loginForm.title") }}</v-toolbar-title>
+      <v-toolbar-title>{{ $t("registerForm.title") }}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon large @click="$emit('toggle-register')">
-        <v-icon>mdi-account-plus</v-icon>
+      <v-btn icon large @click="$emit('toggle-login')">
+        <v-icon>mdi-login</v-icon>
       </v-btn>
     </v-toolbar>
 
@@ -12,7 +12,7 @@
       <v-card-text>
         <v-text-field
           :counter="usernameMax"
-          :label="$t('loginForm.account')"
+          :label="$t('registerForm.account')"
           :rules="usernameRules"
           name="account"
           autocomplete="username"
@@ -22,7 +22,17 @@
         >
         </v-text-field>
         <v-text-field
-          :label="$t('loginForm.password')"
+          :label="$t('registerForm.email')"
+          :rules="emailRules"
+          name="email"
+          prepend-icon="mdi-email"
+          type="email"
+          autocomplete="email"
+          v-model="email"
+        >
+        </v-text-field>
+        <v-text-field
+          :label="$t('registerForm.password')"
           :rules="passwordRules"
           name="password"
           prepend-icon="mdi-lock"
@@ -36,7 +46,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn :disabled="!validated" text :color="$vuetify.theme.dark ? 'dark' : 'primary'">{{
-          $t("loginForm.loginButton")
+          $t("registerForm.registerButton")
         }}</v-btn>
       </v-card-actions>
     </v-form>
@@ -50,6 +60,7 @@ export default {
     validated: false,
     usernameMax: 25,
     username: "",
+    email: "",
     password: "",
     showPassword: false
   }),
@@ -59,10 +70,10 @@ export default {
       if (this.usernameMax) {
         let rule = v =>
           (v || "").length <= this.usernameMax ||
-          this.$t("loginForm.validateUsernameMaxError", { max: this.usernameMax });
+          this.$t("registerForm.validateUsernameMaxError", { max: this.usernameMax });
         rules.push(rule);
       }
-      rules.push(v => v.length !== 0 || this.$t("loginForm.validateUsernameNullError"));
+      rules.push(v => v.length !== 0 || this.$t("registerForm.validateUsernameNullError"));
       return rules;
     },
     passwordRules() {
@@ -70,10 +81,17 @@ export default {
       if (this.passwordMax) {
         let rule = v =>
           (v || "").length <= this.passwordMax ||
-          this.$t("loginForm.validatePasswordMaxError", { max: this.passwordMax });
+          this.$t("registerForm.validatePasswordMaxError", { max: this.passwordMax });
         rules.push(rule);
       }
-      rules.push(v => v.length !== 0 || this.$t("loginForm.validatePasswordNullError"));
+      rules.push(v => v.length !== 0 || this.$t("registerForm.validatePasswordNullError"));
+      return rules;
+    },
+    emailRules() {
+      const rules = [];
+      rules.push(
+        v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t("registerForm.validateEmailError")
+      )
       return rules;
     }
   }
