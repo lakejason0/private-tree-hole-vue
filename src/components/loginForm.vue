@@ -12,6 +12,7 @@
           :label="$t('loginForm.account')"
           :rules="usernameRules"
           name="account"
+          autocomplete="username"
           prepend-icon="mdi-account"
           type="text"
           v-model="username"
@@ -23,6 +24,9 @@
           name="password"
           prepend-icon="mdi-lock"
           type="password"
+          autocomplete="current-password"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="showPassword = !showPassword"
           v-model="password"
         ></v-text-field>
       </v-card-text>
@@ -40,10 +44,11 @@
 export default {
   props: {},
   data: () => ({
-    validate: false,
+    validated: false,
     usernameMax: 25,
     username: "",
     password: "",
+    showPassword: false
   }),
   computed: {
     usernameRules() {
