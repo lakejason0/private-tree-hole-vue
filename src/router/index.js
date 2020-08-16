@@ -42,6 +42,13 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
     icon: "information",
     showAtNavigation: true
+  },
+  {
+    path: "/user",
+    name: "navigation.user",
+    component: () => import("../views/User.vue"),
+    icon: "account",
+    showAtNavigation: true
   }
 ];
 

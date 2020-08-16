@@ -114,7 +114,7 @@ export default {
         v =>
           (v || "").length !== 0 ||
           this.$t("createThreadForm.validateNullError")
-      ); // @TODO i18n
+      );
       return rules;
     }
   },

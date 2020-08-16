@@ -7,9 +7,14 @@
     "validateNullError": "討論串號不可為空"
   },
   "loginForm": {
-    "title": "登錄",
+    "title": "登入",
     "account": "帳戶",
-    "password": "密碼"
+    "password": "密碼",
+    "loginButton": "登入",
+    "validateUsernameMaxError": "最多允許 {max} 个字元",
+    "validateUsernameNullError": "使用者名稱不可為空",
+    "validatePasswordMaxError": "最多允許 {max} 个字元",
+    "validatePasswordNullError": "密碼不可為空"
   },
   "appBar": {
     "title": "雙向樹洞"
@@ -20,7 +25,8 @@
     "home": "主頁",
     "about": "關於",
     "thread": "討論串",
-    "public": "公共版"
+    "public": "公共版",
+    "user": "使用者"
   },
   "public": {
     "title": "公共版",

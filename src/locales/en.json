@@ -9,7 +9,12 @@
   "loginForm": {
     "title": "Login form",
     "account": "Account",
-    "password": "Password"
+    "password": "Password",
+    "loginButton": "Login",
+    "validateUsernameMaxError": "A maximum of {max} characters is allowed",
+    "validateUsernameNullError": "A username is required",
+    "validatePasswordMaxError": "A maximum of {max} characters is allowed",
+    "validatePasswordNullError": "A password is required"
   },
   "appBar": {
     "title": "Private Tree Hole"
@@ -20,7 +25,8 @@
     "home": "Home",
     "about": "About",
     "thread": "Thread",
-    "public": "Public"
+    "public": "Public",
+    "user": "User"
   },
   "public": {
     "title": "Public",
@@ -48,7 +54,7 @@
     "title": "Create thread",
     "threadTitle": "Title",
     "isPublic": "Is Public",
-    "replyButton": "Create"
+    "createButton": "Create"
   },
   "message": {
     "ise": "Internal Server Error",

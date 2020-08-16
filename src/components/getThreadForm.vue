@@ -50,7 +50,7 @@ export default {
       }
       rules.push(
         v => v.length !== 0 || this.$t("getThreadForm.validateNullError")
-      ); // @TODO i18n
+      );
       return rules;
     }
   },

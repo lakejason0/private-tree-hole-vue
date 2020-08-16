@@ -89,7 +89,7 @@ export default {
       rules.push(
         v =>
           (v || "").length !== 0 || this.$t("replyThreadForm.validateNullError")
-      ); // @TODO i18n
+      );
       return rules;
     }
   },

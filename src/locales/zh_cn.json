@@ -9,7 +9,12 @@
   "loginForm": {
     "title": "登录",
     "account": "账号",
-    "password": "密码"
+    "password": "密码",
+    "loginButton": "登录",
+    "validateUsernameMaxError": "最多允许{max}个字符",
+    "validateUsernameNullError": "用户名不可以为空",
+    "validatePasswordMaxError": "最多允许{max}个字符",
+    "validatePasswordNullError": "密码不可以为空"
   },
   "appBar": {
     "title": "双向树洞"
@@ -20,7 +25,8 @@
     "home": "主页",
     "about": "关于",
     "thread": "讨论串",
-    "public": "公共版"
+    "public": "公共版",
+    "user": "用户"
   },
   "public": {
     "title": "公共版",
