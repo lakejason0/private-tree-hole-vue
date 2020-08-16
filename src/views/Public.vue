@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="public">
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="8">
         <v-card class="elevation-1">

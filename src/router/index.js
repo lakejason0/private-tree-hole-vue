@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -8,19 +7,8 @@ const routes = [
   {
     path: "/",
     name: "navigation.home",
-    component: Home,
+    component: () => import("../views/Home.vue"),
     icon: "home",
-    showAtNavigation: true
-  },
-  {
-    path: "/about",
-    name: "navigation.about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) fora this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    icon: "information",
     showAtNavigation: true
   },
   {
@@ -42,6 +30,17 @@ const routes = [
     name: "navigation.public",
     component: () => import("../views/Public.vue"),
     icon: "post",
+    showAtNavigation: true
+  },
+  {
+    path: "/about",
+    name: "navigation.about",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) fora this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    icon: "information",
     showAtNavigation: true
   }
 ];

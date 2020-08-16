@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="thread">
     <v-row align="center" justify="center" v-if="loading">
       <v-col cols="12" md="8" sm="8">
         <h1 class="text-h2">
