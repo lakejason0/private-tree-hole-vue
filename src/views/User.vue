@@ -16,6 +16,15 @@ export default {
   mounted() {
     this.$on("toggle-register", this.toggleRegister);
     this.$on("toggle-login", this.toggleLogin);
+
+    this.$http('/user/info').then(res => {
+      if(res.status === 200){
+        this.$dialog.message.info(`欢迎 ${res.data.data.username}`, {
+          position: "bottom-left",
+          icon: true
+        });
+      }
+    })
   },
   data: () => ({
     toggle: "register"
