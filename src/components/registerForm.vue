@@ -45,7 +45,7 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :disabled="!validated" text :color="$vuetify.theme.dark ? 'dark' : 'primary'">{{
+        <v-btn :disabled="!validated" @click="submit" text :color="$vuetify.theme.dark ? 'dark' : 'primary'">{{
           $t("registerForm.registerButton")
         }}</v-btn>
       </v-card-actions>
@@ -93,6 +93,35 @@ export default {
         v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t("registerForm.validateEmailError")
       )
       return rules;
+    }
+  },
+  methods: {
+    submit () {
+      this.$http({
+        url: 'user/register',
+        method: 'post',
+        data: {
+          username: this.username,
+          password: this.password,
+          email: this.email
+        }
+      }).then(res => {
+        if(res.data.data.success){
+          // @TODO i18n
+          this.$dialog.message.info('注册成功!', {
+            position: "bottom-left",
+            icon: true
+          });
+          this.$router.push('/user')
+        }else{
+          // @TODO i18n
+          // 后端没写失败的情况...
+          this.$dialog.message.info('注册失败!', {
+            position: "bottom-left",
+            icon: true
+          });
+        }
+      })
     }
   }
 };

@@ -3,7 +3,7 @@
     <v-toolbar :color="$vuetify.theme.dark ? 'dark' : 'primary'" dark flat>
       <v-toolbar-title>{{ $t("loginForm.title") }}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon large @click="$emit('toggle-register')">
+      <v-btn @click="$emit('toggle-register')" icon large>
         <v-icon>mdi-account-plus</v-icon>
       </v-btn>
     </v-toolbar>
@@ -14,30 +14,31 @@
           :counter="usernameMax"
           :label="$t('loginForm.account')"
           :rules="usernameRules"
-          name="account"
           autocomplete="username"
+          name="account"
           prepend-icon="mdi-account"
           type="text"
           v-model="username"
         >
         </v-text-field>
         <v-text-field
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           :label="$t('loginForm.password')"
           :rules="passwordRules"
+          @click:append="showPassword = !showPassword"
+          autocomplete="current-password"
           name="password"
           prepend-icon="mdi-lock"
           type="password"
-          autocomplete="current-password"
-          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="showPassword = !showPassword"
           v-model="password"
         ></v-text-field>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :disabled="!validated" text :color="$vuetify.theme.dark ? 'dark' : 'primary'">{{
-          $t("loginForm.loginButton")
-        }}</v-btn>
+        <v-btn :color="$vuetify.theme.dark ? 'dark' : 'primary'" :disabled="!validated" @click="submit" text>{{
+            $t("loginForm.loginButton")
+          }}
+        </v-btn>
       </v-card-actions>
     </v-form>
   </v-card>
@@ -59,7 +60,7 @@ export default {
       if (this.usernameMax) {
         let rule = v =>
           (v || "").length <= this.usernameMax ||
-          this.$t("loginForm.validateUsernameMaxError", { max: this.usernameMax });
+          this.$t("loginForm.validateUsernameMaxError", {max: this.usernameMax});
         rules.push(rule);
       }
       rules.push(v => v.length !== 0 || this.$t("loginForm.validateUsernameNullError"));
@@ -70,11 +71,39 @@ export default {
       if (this.passwordMax) {
         let rule = v =>
           (v || "").length <= this.passwordMax ||
-          this.$t("loginForm.validatePasswordMaxError", { max: this.passwordMax });
+          this.$t("loginForm.validatePasswordMaxError", {max: this.passwordMax});
         rules.push(rule);
       }
       rules.push(v => v.length !== 0 || this.$t("loginForm.validatePasswordNullError"));
       return rules;
+    }
+  },
+  methods: {
+    submit() {
+      this.$http({
+        url: 'user/login',
+        method: 'post',
+        data: {
+          username: this.username,
+          password: this.password
+        }
+      }).then(res => {
+        if(res.data.data.success){
+          // @TODO i18n
+          this.$dialog.message.info('登录成功!', {
+            position: "bottom-left",
+            icon: true
+          });
+          localStorage.setItem('treehole-token', res.data.data.token)
+          this.$router.push('/')
+        }else{
+          // @TODO i18n
+          this.$dialog.message.info('登录失败!', {
+            position: "bottom-left",
+            icon: true
+          });
+        }
+      })
     }
   }
 };
