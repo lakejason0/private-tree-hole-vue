@@ -8,7 +8,7 @@
       </v-btn>
     </v-toolbar>
 
-    <v-form ref="form" v-model="validated">
+    <v-form ref="form" v-model="validated" :disabled="sending">
       <v-card-text>
         <v-text-field
           :counter="usernameMax"
@@ -45,7 +45,7 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :disabled="!validated" @click="submit" text :color="$vuetify.theme.dark ? 'dark' : 'primary'">{{
+        <v-btn :disabled="!validated || sending" @click="submit" text :color="$vuetify.theme.dark ? 'dark' : 'primary'">{{
           $t("registerForm.registerButton")
         }}</v-btn>
       </v-card-actions>
@@ -62,6 +62,7 @@ export default {
     username: "",
     email: "",
     password: "",
+    sending: false,
     showPassword: false
   }),
   computed: {
@@ -97,6 +98,7 @@ export default {
   },
   methods: {
     submit () {
+      this.sending = true;
       this.$http({
         url: 'user/register',
         method: 'post',
@@ -108,6 +110,7 @@ export default {
       }).then(res => {
         if(res.data.data.success){
           // @TODO i18n
+          this.sending = false;
           this.$dialog.message.info('注册成功!', {
             position: "bottom-left",
             icon: true
@@ -116,6 +119,7 @@ export default {
         }else{
           // @TODO i18n
           // 后端没写失败的情况...
+          this.sending = false;
           this.$dialog.message.info('注册失败!', {
             position: "bottom-left",
             icon: true
