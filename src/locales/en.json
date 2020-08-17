@@ -75,6 +75,7 @@
     "forbidden": "Permisson denied",
     "closedThread": "The thread you're replying to is closed.",
     "emptyPost": "You can't post an empty post.",
-    "emptyPublic": "No public post exists."
+    "emptyPublic": "No public post exists.",
+    "notAuthorized": "You are not authorized."
   }
 }

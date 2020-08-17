@@ -75,6 +75,7 @@
     "closedThread": "所回覆的討論串已被關閉",
     "forbidden": "沒有權限",
     "emptyPost": "所提交的討論串內容不能為空",
-    "emptyPublic": "公共版暫無討論串"
+    "emptyPublic": "公共版暫無討論串",
+    "notAuthorized": "還未登入，請先登入"
   }
 }
