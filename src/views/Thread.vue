@@ -56,7 +56,6 @@
     </v-row>
     <v-row v-else align="center" justify="center">
       <v-alert prominent type="error">
-        
         <v-row align="center">
           <v-col class="grow">
             {{ $t("thread.notFoundError") }}

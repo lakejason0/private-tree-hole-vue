@@ -40,6 +40,16 @@
     "public": "Public",
     "user": "User"
   },
+  "home": {
+    "title": "Home",
+    "summaryParagraphTitle": "What's this?",
+    "summaryParagraph": "It's a private tree hole, where you can post a question or anything else.",
+    "usageParagraphTitle": "How do I use it?",
+    "usageParagraph": "Open the menu at the top-left corner, and see what you can do."
+  },
+  "about": {
+    "title": "About"
+  },
   "public": {
     "title": "Public",
     "error": "An error occurred."
@@ -76,6 +86,9 @@
     "closedThread": "The thread you're replying to is closed.",
     "emptyPost": "You can't post an empty post.",
     "emptyPublic": "No public post exists.",
-    "notAuthorized": "You are not authorized."
+    "notAuthorized": "You are not authorized.",
+    "fakeUsername": "Not matching with currently logged-in user.",
+    "userNotMatching": "The password does not match, or the user does not exist.",
+    "usernameBeingOccupied": "The requested username is occupied."
   }
 }

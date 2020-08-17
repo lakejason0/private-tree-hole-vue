@@ -17,14 +17,14 @@ let httpClient = axios.create({
   baseURL: "/api"
 });
 httpClient.interceptors.request.use(config => {
-  let token = localStorage.getItem("treehole-token")
-  if(token){
+  let token = localStorage.getItem("treehole-token");
+  if (token) {
     config.headers = {
-      'Authorization': `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`
+    };
   }
-  return config
-})
+  return config;
+});
 Vue.prototype.$http = httpClient;
 
 Vue.use(VuetifyDialog, {

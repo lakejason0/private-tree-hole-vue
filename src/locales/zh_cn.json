@@ -44,6 +44,16 @@
     "title": "公共版",
     "error": "请求时发生错误。"
   },
+  "home": {
+    "title": "主页",
+    "summaryParagraphTitle": "这是什么？",
+    "summaryParagraph": "欢迎来到湖人的双向树洞。你可以在这里问问题/发各种东西。",
+    "usageParagraphTitle": "好啊，怎么用呢？",
+    "usageParagraph": "打开左上角的菜单，看看里面有哪些选项吧。"
+  },
+  "about": {
+    "title": "关于"
+  },
   "thread": {
     "notFoundError": "所访问的讨论串不存在。",
     "goBackButton": "返回"
@@ -76,6 +86,8 @@
     "forbidden": "没有权限",
     "emptyPost": "所提交的讨论串不能是空的",
     "emptyPublic": "公共版暂无讨论串",
-    "notAuthorized": "尚未登录，请先登录"
+    "notAuthorized": "尚未登录，请先登录",
+    "userNotMatching": "用户不存在或密码错误",
+    "usernameBeingOccupied": "用户名已被占用"
   }
 }

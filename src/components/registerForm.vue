@@ -45,9 +45,13 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :disabled="!validated || sending" @click="submit" text :color="$vuetify.theme.dark ? 'dark' : 'primary'">{{
-          $t("registerForm.registerButton")
-        }}</v-btn>
+        <v-btn
+          :disabled="!validated || sending"
+          @click="submit"
+          text
+          :color="$vuetify.theme.dark ? 'dark' : 'primary'"
+          >{{ $t("registerForm.registerButton") }}</v-btn
+        >
       </v-card-actions>
     </v-form>
   </v-card>
@@ -71,10 +75,14 @@ export default {
       if (this.usernameMax) {
         let rule = v =>
           (v || "").length <= this.usernameMax ||
-          this.$t("registerForm.validateUsernameMaxError", { max: this.usernameMax });
+          this.$t("registerForm.validateUsernameMaxError", {
+            max: this.usernameMax
+          });
         rules.push(rule);
       }
-      rules.push(v => v.length !== 0 || this.$t("registerForm.validateUsernameNullError"));
+      rules.push(
+        v => v.length !== 0 || this.$t("registerForm.validateUsernameNullError")
+      );
       return rules;
     },
     passwordRules() {
@@ -82,50 +90,57 @@ export default {
       if (this.passwordMax) {
         let rule = v =>
           (v || "").length <= this.passwordMax ||
-          this.$t("registerForm.validatePasswordMaxError", { max: this.passwordMax });
+          this.$t("registerForm.validatePasswordMaxError", {
+            max: this.passwordMax
+          });
         rules.push(rule);
       }
-      rules.push(v => v.length !== 0 || this.$t("registerForm.validatePasswordNullError"));
+      rules.push(
+        v => v.length !== 0 || this.$t("registerForm.validatePasswordNullError")
+      );
       return rules;
     },
     emailRules() {
       const rules = [];
       rules.push(
-        v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t("registerForm.validateEmailError")
-      )
+        v =>
+          !v ||
+          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+          this.$t("registerForm.validateEmailError")
+      );
       return rules;
     }
   },
   methods: {
-    submit () {
+    submit() {
       this.sending = true;
       this.$http({
-        url: 'user/register',
-        method: 'post',
+        url: "user/register",
+        method: "post",
         data: {
           username: this.username,
           password: this.password,
           email: this.email
         }
       }).then(res => {
-        if(res.data.data.success){
+        if (res.data.data.success) {
           // @TODO i18n
           this.sending = false;
-          this.$dialog.message.info('注册成功!', {
+          this.$dialog.message.info("注册成功!", {
             position: "bottom-left",
             icon: true
           });
-          this.$router.push('/user')
-        }else{
+          this.$router.push("/user");
+        } else {
           // @TODO i18n
           // 后端没写失败的情况...
           this.sending = false;
-          this.$dialog.message.info('注册失败!', {
+          this.$dialog.message.info("注册失败!", {
             position: "bottom-left",
             icon: true
           });
         }
-      })
+      });
     }
   }
 };

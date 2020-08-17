@@ -6,10 +6,10 @@
     <div class="markdown" v-html="compiledContent"></div>
     <v-card-actions>
       <v-list-item class="grow">
-        <v-icon class="mr-1">mdi-account-circle</v-icon>
-        <v-list-item-content>
-          <v-list-item-title>{{ floorData.username }}</v-list-item-title>
-        </v-list-item-content>
+        <v-row align="center" justify="start">
+          <v-icon class="mr-1">mdi-account-circle</v-icon>
+          <span class="username">{{ floorData.username }}</span>
+        </v-row>
         <v-row align="center" justify="end">
           <v-icon class="mr-1">mdi-clock</v-icon>
           <span class="subheading mr-2">{{ floorData.time }}</span>
@@ -27,6 +27,10 @@
 }
 .markdown {
   padding: 16px;
+}
+.username {
+  overflow: visible;
+  display: inline-block;
 }
 </style>
 

@@ -39,13 +39,13 @@
               ></v-divider>
             </template>
           </v-list>
-            <v-alert prominent tile type="error" v-else>
-                <v-row align="center">
-                    <v-col class="grow">
-                        {{ $t("public.error") }}
-                    </v-col>
-                </v-row>
-            </v-alert>
+          <v-alert prominent tile type="error" v-else>
+            <v-row align="center">
+              <v-col class="grow">
+                {{ $t("public.error") }}
+              </v-col>
+            </v-row>
+          </v-alert>
         </v-card>
       </v-col>
     </v-row>

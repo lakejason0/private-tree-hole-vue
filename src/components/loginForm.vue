@@ -35,9 +35,12 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :color="$vuetify.theme.dark ? 'dark' : 'primary'" :disabled="!validated" @click="submit" text>{{
-            $t("loginForm.loginButton")
-          }}
+        <v-btn
+          :color="$vuetify.theme.dark ? 'dark' : 'primary'"
+          :disabled="!validated"
+          @click="submit"
+          text
+          >{{ $t("loginForm.loginButton") }}
         </v-btn>
       </v-card-actions>
     </v-form>
@@ -60,10 +63,14 @@ export default {
       if (this.usernameMax) {
         let rule = v =>
           (v || "").length <= this.usernameMax ||
-          this.$t("loginForm.validateUsernameMaxError", {max: this.usernameMax});
+          this.$t("loginForm.validateUsernameMaxError", {
+            max: this.usernameMax
+          });
         rules.push(rule);
       }
-      rules.push(v => v.length !== 0 || this.$t("loginForm.validateUsernameNullError"));
+      rules.push(
+        v => v.length !== 0 || this.$t("loginForm.validateUsernameNullError")
+      );
       return rules;
     },
     passwordRules() {
@@ -71,39 +78,43 @@ export default {
       if (this.passwordMax) {
         let rule = v =>
           (v || "").length <= this.passwordMax ||
-          this.$t("loginForm.validatePasswordMaxError", {max: this.passwordMax});
+          this.$t("loginForm.validatePasswordMaxError", {
+            max: this.passwordMax
+          });
         rules.push(rule);
       }
-      rules.push(v => v.length !== 0 || this.$t("loginForm.validatePasswordNullError"));
+      rules.push(
+        v => v.length !== 0 || this.$t("loginForm.validatePasswordNullError")
+      );
       return rules;
     }
   },
   methods: {
     submit() {
       this.$http({
-        url: 'user/login',
-        method: 'post',
+        url: "user/login",
+        method: "post",
         data: {
           username: this.username,
           password: this.password
         }
       }).then(res => {
-        if(res.data.data.success){
+        if (res.data.data.success) {
           // @TODO i18n
-          this.$dialog.message.info('登录成功!', {
+          this.$dialog.message.info("登录成功!", {
             position: "bottom-left",
             icon: true
           });
-          localStorage.setItem('treehole-token', res.data.data.token)
-          this.$router.push('/')
-        }else{
+          localStorage.setItem("treehole-token", res.data.data.token);
+          this.$router.push("/");
+        } else {
           // @TODO i18n
-          this.$dialog.message.info('登录失败!', {
+          this.$dialog.message.info("登录失败!", {
             position: "bottom-left",
             icon: true
           });
         }
-      })
+      });
     }
   }
 };

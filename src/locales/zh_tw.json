@@ -44,6 +44,16 @@
     "title": "公共版",
     "error": "存取時發生錯誤。"
   },
+  "home": {
+    "title": "主頁",
+    "summaryParagraphTitle": "這是……？",
+    "summaryParagraph": "歡迎來到雙向樹洞。你可以在這裡問問題，或是發各種內容。",
+    "usageParagraphTitle": "好R，但是怎麼做？",
+    "usageParagraph": "打開左上角的選單，看看自己能做什麼吧。"
+  },
+  "about": {
+    "title": "關於"
+  },
   "thread": {
     "notFoundError": "所訪問的討論串不存在。",
     "goBackButton": "返回"
@@ -76,6 +86,8 @@
     "forbidden": "沒有權限",
     "emptyPost": "所提交的討論串內容不能為空",
     "emptyPublic": "公共版暫無討論串",
-    "notAuthorized": "還未登入，請先登入"
+    "notAuthorized": "還未登入，請先登入",
+    "userNotMatching": "使用者不存在，或密碼不正確",
+    "usernameBeingOccupied": "使用者名稱已被佔用"
   }
 }
