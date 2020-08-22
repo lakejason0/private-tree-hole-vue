@@ -15,7 +15,7 @@ import i18n from "./i18n";
 Vue.config.productionTip = false;
 
 let httpClient = axios.create({
-  baseURL: process.env.NODE_ENV === "production" ? "http://api.lakejason0.ml/api/" : "/api"
+  baseURL: process.env.NODE_ENV === "production" ? "https://api.lakejason0.ml/api/" : "api/"
 });
 httpClient.interceptors.request.use(config => {
   let token = localStorage.getItem("treehole-token");
