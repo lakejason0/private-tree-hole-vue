@@ -13,6 +13,7 @@ import router from "./router";
 import i18n from "./i18n";
 
 Vue.config.productionTip = false;
+
 let httpClient = axios.create({
   baseURL: process.env.NODE_ENV === "production" ? "https://api" : "/api"
 });
