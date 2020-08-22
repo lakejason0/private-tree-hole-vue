@@ -14,7 +14,7 @@ import i18n from "./i18n";
 
 Vue.config.productionTip = false;
 let httpClient = axios.create({
-  baseURL: "/api"
+  baseURL: process.env.TREE_HOLE_API_BASE_URL
 });
 httpClient.interceptors.request.use(config => {
   let token = localStorage.getItem("treehole-token");
