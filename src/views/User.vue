@@ -12,7 +12,7 @@
         </h2>
       </v-col>
     </v-row>
-    <v-row align="center" justify="center" v-if="!loading && logged_in">
+    <v-row align="center" justify="center" v-else-if="!loading && logged_in">
       <v-col cols="12" md="8" sm="8">
         <h1 class="text-h2">
           {{ $t("user.title") }}
@@ -43,12 +43,26 @@ export default {
     this.$on("toggle-login", this.toggleLogin);
 
     this.$http("/user/info").then(res => {
-      if (res.status === 200) {
+      console.log(res)
+      if (res.data.code === 200) {
         this.$dialog.message.info(this.$t("user.loggedInToast",{username: res.data.data.username}), {
           position: "bottom-left",
           icon: true
         });
+        
         this.logged_in = true
+      } else if (res.data.code === 401) {
+        this.$dialog.message.error(this.$t("message.notAuthorized"), {
+          position: "bottom-left",
+          icon: true
+        });
+      } else {
+        for (let toast in res.data.toast) {
+          this.$dialog.message.error(this.$t(toast.identifier), {
+            position: "bottom-left",
+            icon: true
+          });
+        }
       }
       this.loading = false
     });

@@ -14,7 +14,9 @@
         "validateUsernameMaxError": "A maximum of {max} characters is allowed",
         "validateUsernameNullError": "A username is required",
         "validatePasswordMaxError": "A maximum of {max} characters is allowed",
-        "validatePasswordNullError": "A password is required"
+        "validatePasswordNullError": "A password is required",
+        "loggedInToast": "You are now logged in.",
+        "loggedInFailedToast": "Logging in failed."
     },
     "registerForm": {
         "title": "Register",
@@ -26,7 +28,8 @@
         "validateUsernameNullError": "A username is required",
         "validatePasswordMaxError": "A maximum of {max} characters is allowed",
         "validatePasswordNullError": "A password is required",
-        "validateEmailError": "A valid Email address is required"
+        "validateEmailError": "A valid Email address is required",
+        "registeredToast": "Registered."
     },
     "appBar": {
         "title": "Private Tree Hole"

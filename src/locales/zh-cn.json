@@ -14,7 +14,9 @@
         "validateUsernameMaxError": "最多允许{max}个字符",
         "validateUsernameNullError": "用户名不可以为空",
         "validatePasswordMaxError": "最多允许{max}个字符",
-        "validatePasswordNullError": "密码不可以为空"
+        "validatePasswordNullError": "密码不可以为空",
+        "loggedInToast": "登录成功！",
+        "loggedInFailedToast": "登录失败！"
     },
     "registerForm": {
         "title": "注册",
@@ -26,7 +28,8 @@
         "validateUsernameNullError": "用户名不可以为空",
         "validatePasswordMaxError": "最多允许{max}个字符",
         "validatePasswordNullError": "密码不可以为空",
-        "validateEmailError": "需要一个有效的电子邮箱"
+        "validateEmailError": "需要一个有效的电子邮箱",
+        "registeredToast": "注册成功！"
     },
     "appBar": {
         "title": "双向树洞"

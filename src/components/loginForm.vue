@@ -100,19 +100,19 @@ export default {
         }
       }).then(res => {
         if (res.data.data.success) {
-          // @TODO i18n
-          this.$dialog.message.info("登录成功!", {
+          this.$dialog.message.info(this.$t("loginForm.loggedInToast"), {
             position: "bottom-left",
             icon: true
           });
           localStorage.setItem("treehole-token", res.data.data.token);
           this.$router.push("/");
         } else {
-          // @TODO i18n
-          this.$dialog.message.info("登录失败!", {
-            position: "bottom-left",
-            icon: true
-          });
+          for (let toast in res.data.toast) {
+              this.$dialog.message.error(this.$t(toast.identifier), {
+              position: "bottom-left",
+              icon: true
+            });
+          }
         }
       });
     }

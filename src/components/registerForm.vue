@@ -124,21 +124,20 @@ export default {
         }
       }).then(res => {
         if (res.data.data.success) {
-          // @TODO i18n
           this.sending = false;
-          this.$dialog.message.info("注册成功!", {
+          this.$dialog.message.info(this.$t('registerForm.registeredToast'), {
             position: "bottom-left",
             icon: true
           });
           this.$router.push("/user");
         } else {
-          // @TODO i18n
-          // 后端没写失败的情况...
           this.sending = false;
-          this.$dialog.message.info("注册失败!", {
-            position: "bottom-left",
-            icon: true
-          });
+          for (let toast in res.data.toast) {
+              this.$dialog.message.error(this.$t(toast.identifier), {
+              position: "bottom-left",
+              icon: true
+            });
+          }
         }
       });
     }
