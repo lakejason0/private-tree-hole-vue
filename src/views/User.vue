@@ -19,7 +19,7 @@
         </h1>
       </v-col>
     </v-row>
-    <v-row align="center" justify="center">
+    <v-row align="center" justify="center" v-else>
       <v-col cols="12" sm="8" md="4" >
         <login-form
           v-if="toggle === 'login'"

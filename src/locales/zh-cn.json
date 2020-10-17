@@ -56,7 +56,7 @@
     },
     "user": {
         "title": "用户中心",
-        "loggedInToast": "欢迎 ${username}"
+        "loggedInToast": "欢迎 {username}"
     },
     "thread": {
         "notFoundError": "所访问的讨论串不存在。",
