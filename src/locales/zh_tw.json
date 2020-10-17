@@ -1,93 +1,98 @@
 {
-  "getThreadForm": {
-    "title": "討論串號",
-    "goButton": "前往",
-    "threadID": "討論串號",
-    "validateMaxError": "最多允許 {max} 个字元",
-    "validateNullError": "討論串號不可為空"
-  },
-  "loginForm": {
-    "title": "登入",
-    "account": "帳戶",
-    "password": "密碼",
-    "loginButton": "登入",
-    "validateUsernameMaxError": "最多允許 {max} 个字元",
-    "validateUsernameNullError": "使用者名稱不可為空",
-    "validatePasswordMaxError": "最多允許 {max} 个字元",
-    "validatePasswordNullError": "密碼不可為空"
-  },
-  "registerForm": {
-    "title": "註冊",
-    "account": "帳戶",
-    "password": "密碼",
-    "email": "電郵",
-    "registerButton": "註冊",
-    "validateUsernameMaxError": "最多允許 {max} 个字元",
-    "validateUsernameNullError": "使用者名稱不可為空",
-    "validatePasswordMaxError": "最多允許 {max} 个字元",
-    "validatePasswordNullError": "密碼不可為空",
-    "validateEmailError": "需要有效的電郵"
-  },
-  "appBar": {
-    "title": "雙向樹洞"
-  },
-  "navigation": {
-    "title": "雙向樹洞",
-    "subtitle": "一個私人樹洞。",
-    "home": "主頁",
-    "about": "關於",
-    "thread": "討論串",
-    "public": "公共版",
-    "user": "使用者"
-  },
-  "public": {
-    "title": "公共版",
-    "error": "存取時發生錯誤。"
-  },
-  "home": {
-    "title": "主頁",
-    "summaryParagraphTitle": "這是……？",
-    "summaryParagraph": "歡迎來到雙向樹洞。你可以在這裡問問題，或是發各種內容。但是請務必遵守規則。",
-    "usageParagraphTitle": "好R，但是怎麼做？",
-    "usageParagraph": "打開左上角的選單，看看自己能做什麼吧。"
-  },
-  "about": {
-    "title": "關於"
-  },
-  "thread": {
-    "notFoundError": "所訪問的討論串不存在。",
-    "goBackButton": "返回"
-  },
-  "replyThreadForm": {
-    "validateMaxError": "最多允許 {max} 个字元",
-    "validateNullError": "使用者名稱不可為空",
-    "username": "使用者名稱",
-    "content": "內容",
-    "closeButton": "關閉",
-    "title": "回覆",
-    "replyButton": "回覆"
-  },
-  "createThreadForm": {
-    "validateMaxError": "最多允許 {max} 个字元",
-    "validateNullError": "使用者名稱不可為空",
-    "username": "使用者名稱",
-    "content": "內容",
-    "closeButton": "關閉",
-    "threadTitle": "標題",
-    "title": "創建討論串",
-    "isPublic": "投放到公共版",
-    "createButton": "創建"
-  },
-  "message": {
-    "ise": "伺服器內部錯誤",
-    "floorNumberError": "查詢樓層號時出現錯誤",
-    "missingThread": "所回覆的討論串不存在",
-    "closedThread": "所回覆的討論串已被關閉",
-    "forbidden": "沒有權限",
-    "emptyPost": "所提交的討論串內容不能為空",
-    "emptyPublic": "公共版暫無討論串",
-    "notAuthorized": "還未登入，請先登入",
-    "userNotMatching": "使用者不存在，或密碼不正確",
-    "usernameBeingOccupied": "使用者名稱已被佔用"
-  }
+    "getThreadForm": {
+        "title": "討論串號",
+        "goButton": "前往",
+        "threadID": "討論串號",
+        "validateMaxError": "最多允許 {max} 个字元",
+        "validateNullError": "討論串號不可為空"
+    },
+    "loginForm": {
+        "title": "登入",
+        "account": "帳戶",
+        "password": "密碼",
+        "loginButton": "登入",
+        "validateUsernameMaxError": "最多允許 {max} 个字元",
+        "validateUsernameNullError": "使用者名稱不可為空",
+        "validatePasswordMaxError": "最多允許 {max} 个字元",
+        "validatePasswordNullError": "密碼不可為空"
+    },
+    "registerForm": {
+        "title": "註冊",
+        "account": "帳戶",
+        "password": "密碼",
+        "email": "電郵",
+        "registerButton": "註冊",
+        "validateUsernameMaxError": "最多允許 {max} 个字元",
+        "validateUsernameNullError": "使用者名稱不可為空",
+        "validatePasswordMaxError": "最多允許 {max} 个字元",
+        "validatePasswordNullError": "密碼不可為空",
+        "validateEmailError": "需要有效的電郵"
+    },
+    "appBar": {
+        "title": "雙向樹洞"
+    },
+    "navigation": {
+        "title": "雙向樹洞",
+        "subtitle": "一個私人樹洞。",
+        "home": "主頁",
+        "about": "關於",
+        "thread": "討論串",
+        "public": "公共版",
+        "user": "使用者"
+    },
+    "public": {
+        "title": "公共版",
+        "error": "存取時發生錯誤。"
+    },
+    "home": {
+        "title": "主頁",
+        "summaryParagraphTitle": "這是……？",
+        "summaryParagraph": "歡迎來到雙向樹洞。你可以在這裡問問題，或是發各種內容。但是請務必遵守規則。",
+        "usageParagraphTitle": "好R，但是怎麼做？",
+        "usageParagraph": "打開左上角的選單，看看自己能做什麼吧。"
+    },
+    "about": {
+        "title": "關於"
+    },
+    "user": {
+        "title": "使用者頁面",
+        "loggedInToast": "歡迎 ${username}"
+    },
+    "thread": {
+        "notFoundError": "所訪問的討論串不存在。",
+        "goBackButton": "返回"
+    },
+    "replyThreadForm": {
+        "validateMaxError": "最多允許 {max} 个字元",
+        "validateNullError": "使用者名稱不可為空",
+        "username": "使用者名稱",
+        "content": "內容",
+        "closeButton": "關閉",
+        "title": "回覆",
+        "replyButton": "回覆"
+    },
+    "createThreadForm": {
+        "validateMaxError": "最多允許 {max} 个字元",
+        "validateNullError": "使用者名稱不可為空",
+        "username": "使用者名稱",
+        "content": "內容",
+        "closeButton": "關閉",
+        "threadTitle": "標題",
+        "title": "創建討論串",
+        "isPublic": "投放到公共版",
+        "createButton": "創建"
+    },
+    "message": {
+        "ise": "伺服器內部錯誤",
+        "floorNumberError": "查詢樓層號時出現錯誤",
+        "missingThread": "所回覆的討論串不存在",
+        "closedThread": "所回覆的討論串已被關閉",
+        "forbidden": "沒有權限",
+        "emptyPost": "所提交的討論串內容不能為空",
+        "emptyPublic": "公共版暫無討論串",
+        "notAuthorized": "還未登入，請先登入",
+        "userNotMatching": "使用者不存在，或密碼不正確",
+        "usernameBeingOccupied": "使用者名稱已被佔用",
+        "fakeUsername": "與當前已登入的使用者不匹配"
+    }
 }

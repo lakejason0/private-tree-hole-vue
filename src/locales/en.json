@@ -21,7 +21,7 @@
     "account": "Account",
     "email": "Email",
     "password": "Password",
-    "loginButton": "Register",
+    "registerButton": "Register",
     "validateUsernameMaxError": "A maximum of {max} characters is allowed",
     "validateUsernameNullError": "A username is required",
     "validatePasswordMaxError": "A maximum of {max} characters is allowed",
@@ -49,6 +49,10 @@
   },
   "about": {
     "title": "About"
+  },
+  "user": {
+    "title": "User",
+    "loggedInToast": "Welcome ${username}"
   },
   "public": {
     "title": "Public",

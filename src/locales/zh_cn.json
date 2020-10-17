@@ -1,93 +1,98 @@
 {
-  "getThreadForm": {
-    "title": "讨论串号",
-    "goButton": "前往",
-    "threadID": "讨论串号",
-    "validateMaxError": "最多允许{max}个字符",
-    "validateNullError": "讨论串号不可以为空"
-  },
-  "loginForm": {
-    "title": "登录",
-    "account": "账号",
-    "password": "密码",
-    "loginButton": "登录",
-    "validateUsernameMaxError": "最多允许{max}个字符",
-    "validateUsernameNullError": "用户名不可以为空",
-    "validatePasswordMaxError": "最多允许{max}个字符",
-    "validatePasswordNullError": "密码不可以为空"
-  },
-  "registerForm": {
-    "title": "注册",
-    "account": "账号",
-    "password": "密码",
-    "email": "电子邮箱",
-    "registerButton": "注册",
-    "validateUsernameMaxError": "最多允许{max}个字符",
-    "validateUsernameNullError": "用户名不可以为空",
-    "validatePasswordMaxError": "最多允许{max}个字符",
-    "validatePasswordNullError": "密码不可以为空",
-    "validateEmailError": "需要一个有效的电子邮箱"
-  },
-  "appBar": {
-    "title": "双向树洞"
-  },
-  "navigation": {
-    "title": "双向树洞",
-    "subtitle": "一个私人树洞。",
-    "home": "主页",
-    "about": "关于",
-    "thread": "讨论串",
-    "public": "公共版",
-    "user": "用户"
-  },
-  "public": {
-    "title": "公共版",
-    "error": "请求时发生错误。"
-  },
-  "home": {
-    "title": "主页",
-    "summaryParagraphTitle": "这是什么？",
-    "summaryParagraph": "欢迎来到湖人的双向树洞。你可以在这里问问题/发各种东西，但是请务必遵守规则。",
-    "usageParagraphTitle": "好啊，怎么用呢？",
-    "usageParagraph": "打开左上角的菜单，看看里面有哪些选项吧。"
-  },
-  "about": {
-    "title": "关于"
-  },
-  "thread": {
-    "notFoundError": "所访问的讨论串不存在。",
-    "goBackButton": "返回"
-  },
-  "replyThreadForm": {
-    "validateMaxError": "最多允许{max}个字符",
-    "validateNullError": "用户名不可以为空",
-    "username": "用户名",
-    "content": "内容",
-    "closeButton": "关闭",
-    "title": "回复",
-    "replyButton": "回复"
-  },
-  "createThreadForm": {
-    "validateMaxError": "最多允许{max}个字符",
-    "validateNullError": "用户名不可以为空",
-    "username": "用户名",
-    "content": "内容",
-    "closeButton": "关闭",
-    "title": "创建讨论串",
-    "threadTitle": "标题",
-    "isPublic": "投放至公共版",
-    "createButton": "创建"
-  },
-  "message": {
-    "ise": "哎呀，土豆出现错误了",
-    "floorNumberError": "查询楼层号时出现错误",
-    "missingThread": "所回复的讨论串不存在",
-    "closedThread": "所回复的讨论串已被关闭",
-    "forbidden": "没有权限",
-    "emptyPost": "所提交的讨论串不能是空的",
-    "emptyPublic": "公共版暂无讨论串",
-    "notAuthorized": "尚未登录，请先登录",
-    "userNotMatching": "用户不存在或密码错误",
-    "usernameBeingOccupied": "用户名已被占用"
-  }
+    "getThreadForm": {
+        "title": "讨论串号",
+        "goButton": "前往",
+        "threadID": "讨论串号",
+        "validateMaxError": "最多允许{max}个字符",
+        "validateNullError": "讨论串号不可以为空"
+    },
+    "loginForm": {
+        "title": "登录",
+        "account": "账号",
+        "password": "密码",
+        "loginButton": "登录",
+        "validateUsernameMaxError": "最多允许{max}个字符",
+        "validateUsernameNullError": "用户名不可以为空",
+        "validatePasswordMaxError": "最多允许{max}个字符",
+        "validatePasswordNullError": "密码不可以为空"
+    },
+    "registerForm": {
+        "title": "注册",
+        "account": "账号",
+        "password": "密码",
+        "email": "电子邮箱",
+        "registerButton": "注册",
+        "validateUsernameMaxError": "最多允许{max}个字符",
+        "validateUsernameNullError": "用户名不可以为空",
+        "validatePasswordMaxError": "最多允许{max}个字符",
+        "validatePasswordNullError": "密码不可以为空",
+        "validateEmailError": "需要一个有效的电子邮箱"
+    },
+    "appBar": {
+        "title": "双向树洞"
+    },
+    "navigation": {
+        "title": "双向树洞",
+        "subtitle": "一个私人树洞。",
+        "home": "主页",
+        "about": "关于",
+        "thread": "讨论串",
+        "public": "公共版",
+        "user": "用户"
+    },
+    "public": {
+        "title": "公共版",
+        "error": "请求时发生错误。"
+    },
+    "home": {
+        "title": "主页",
+        "summaryParagraphTitle": "这是什么？",
+        "summaryParagraph": "欢迎来到湖人的双向树洞。你可以在这里问问题/发各种东西，但是请务必遵守规则。",
+        "usageParagraphTitle": "好啊，怎么用呢？",
+        "usageParagraph": "打开左上角的菜单，看看里面有哪些选项吧。"
+    },
+    "about": {
+        "title": "关于"
+    },
+    "user": {
+        "title": "用户中心",
+        "loggedInToast": "欢迎 ${username}"
+    },
+    "thread": {
+        "notFoundError": "所访问的讨论串不存在。",
+        "goBackButton": "返回"
+    },
+    "replyThreadForm": {
+        "validateMaxError": "最多允许{max}个字符",
+        "validateNullError": "用户名不可以为空",
+        "username": "用户名",
+        "content": "内容",
+        "closeButton": "关闭",
+        "title": "回复",
+        "replyButton": "回复"
+    },
+    "createThreadForm": {
+        "validateMaxError": "最多允许{max}个字符",
+        "validateNullError": "用户名不可以为空",
+        "username": "用户名",
+        "content": "内容",
+        "closeButton": "关闭",
+        "title": "创建讨论串",
+        "threadTitle": "标题",
+        "isPublic": "投放至公共版",
+        "createButton": "创建"
+    },
+    "message": {
+        "ise": "哎呀，土豆出现错误了",
+        "floorNumberError": "查询楼层号时出现错误",
+        "missingThread": "所回复的讨论串不存在",
+        "closedThread": "所回复的讨论串已被关闭",
+        "forbidden": "没有权限",
+        "emptyPost": "所提交的讨论串不能是空的",
+        "emptyPublic": "公共版暂无讨论串",
+        "notAuthorized": "尚未登录，请先登录",
+        "userNotMatching": "用户不存在或密码错误",
+        "usernameBeingOccupied": "用户名已被占用",
+        "fakeUsername": "与当前登录的用户不匹配"
+    }
 }
