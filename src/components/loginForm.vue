@@ -37,7 +37,7 @@
         <v-spacer></v-spacer>
         <v-btn
           :color="$vuetify.theme.dark ? 'dark' : 'primary'"
-          :disabled="!validated"
+          :disabled="!validated || submitting"
           @click="submit"
           text
           >{{ $t("loginForm.loginButton") }}
@@ -55,7 +55,8 @@ export default {
     usernameMax: 25,
     username: "",
     password: "",
-    showPassword: false
+    showPassword: false,
+    submitting: false
   }),
   computed: {
     usernameRules() {
@@ -91,6 +92,7 @@ export default {
   },
   methods: {
     submit() {
+      this.submitting = true;
       this.$http({
         url: "user/login",
         method: "post",
@@ -115,6 +117,7 @@ export default {
           }
         }
       });
+      this.submitting = false
     }
   }
 };
