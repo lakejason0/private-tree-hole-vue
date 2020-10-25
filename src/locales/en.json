@@ -55,7 +55,12 @@
     },
     "user": {
         "title": "User",
-        "loggedInToast": "Welcome {username}"
+        "loggedInToast": "Welcome {username}",
+        "tabs": {
+            "recent": "Recent",
+            "preferences": "Preferences",
+            "query": "Search"
+        }
     },
     "public": {
         "title": "Public",

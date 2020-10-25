@@ -59,7 +59,12 @@
     },
     "user": {
         "title": "使用者頁面",
-        "loggedInToast": "歡迎 {username}"
+        "loggedInToast": "歡迎 {username}",
+        "tabs": {
+            "recent": "近期",
+            "preferences": "偏好設定",
+            "query": "搜尋"
+        }
     },
     "thread": {
         "notFoundError": "所訪問的討論串不存在。",
