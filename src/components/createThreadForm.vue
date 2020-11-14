@@ -137,6 +137,7 @@ export default {
       } else {
         this.sending = false;
         this.makeToast(response.data.toast);
+        console.log(response)
       }
     },
     createThread({ username, content, title }) {
