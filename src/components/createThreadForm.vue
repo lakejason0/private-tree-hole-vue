@@ -143,7 +143,7 @@ export default {
     createThread({ username, content, title }) {
       return this.$http.post("thread", {
         action: "create",
-        data: { title: title, username: username, content: content }
+        data: { title: title, username: username, content: content, is_public: is_public }
       });
     },
     reset() {
