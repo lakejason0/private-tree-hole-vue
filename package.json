@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.162",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "dompurify": "^2.2.0",
     "lodash": "^4.17.20",
